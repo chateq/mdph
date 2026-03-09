@@ -12,21 +12,9 @@ export function createNavigation() {
   const header = document.querySelector('.header .container');
   if (!header) return;
 
-  const navHTML = `
-    <nav class="nav">
-      <a class="nav-link" href="/">Accueil</a>
-      <a class="nav-link" href="/donnees-confidentialite.html">Données & confidentialité</a>
-      <a class="nav-link" href="/qui-sommes-nous.html">Qui sommes-nous</a>
-      <span class="nav-phone">02 99 260 127</span>
-    </nav>
-  `;
-
-  // Remplacer la navigation existante ou en ajouter une nouvelle
   const existingNav = header.querySelector('.nav');
   if (existingNav) {
-    existingNav.outerHTML = navHTML;
-  } else {
-    header.insertAdjacentHTML('beforeend', navHTML);
+    existingNav.remove();
   }
 }
 

@@ -31,11 +31,7 @@ body.home-page main::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('/bg_landingpage.svg');
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-  opacity: 0.2;
+  background: none;
   pointer-events: none;
   z-index: 0;
 }
@@ -54,11 +50,7 @@ body.home-page.legal-page::before {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url('/bg_landingpage.svg');
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-  opacity: 0.2;
+  background: none;
   display: block;
   pointer-events: none;
   z-index: 0;
@@ -88,9 +80,28 @@ body.home-page.legal-page .main {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+.body-wrap {
+  max-width: none !important;
+}
+
 /* Container */
 .container{max-width:1080px;margin:0 auto;padding:0 20px;background:none}
 .container-sm{max-width:800px;margin:0 auto;padding:0 20px;background:none}
+
+body.home-page .container,
+body.home-page .container-sm {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+body.home-page .hero > .container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12px;
+}
 
 /* Header - Styles unifiés avec le formulaire */
 .header {
@@ -171,37 +182,64 @@ body.home-page.legal-page .main {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding-top: 48px;
-  padding-bottom: 88px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   background: transparent;
-  border-radius: 0; 
-  margin: 0; 
-  box-shadow: none; 
+  margin: 0;
   position: relative;
 }
 
 .hero-inner {
-  display: flex;
-  align-items: center;
-  gap: 40px;
+  display: block;
 }
 
 .hero-copy {
-  flex: 1;
   position: relative;
   text-align: center;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
 }
 
 .hero-title {
   font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 44px;
-  line-height: 54px;
+  font-size: 32px;
+  line-height: 44px;
   font-weight: 700;
   margin: 0 auto 16px;
   color: #2A293E;
+}
+
+.typewriter {
+  display: inline-block;
+  margin-left: 10px;
+  color: #EC9D5C;
+  background: rgba(236, 157, 92, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 16px rgba(236, 157, 92, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  padding: 3px 8px;
+  border-radius: 6px;
+  transition: all 0.35s ease;
+}
+
+.typewriter__word {
+  display: inline-block;
+  white-space: nowrap;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.hero-static-optima {
+  color: #2A293E;
+  font-weight: 700;
+}
+
+.typewriter.is-fading .typewriter__word {
+  opacity: 0;
+  transform: translateY(4px);
 }
 
 .hero-paragraph {
@@ -216,11 +254,143 @@ body.home-page.legal-page .main {
   max-width: 400px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 80px;
+  margin-bottom: 0;
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: 700px;
+  height: 80vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2A293E;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.modal-close:hover {
+  background-color: #f5f5f5;
+}
+
+.modal-content {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-section {
+  margin-bottom: 24px;
+}
+
+.modal-section:last-child {
+  margin-bottom: 0;
+}
+
+.modal-section h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2A293E;
+}
+
+.modal-section p {
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+  color: #666;
+}
+
+.modal-section ul {
+  margin: 0 0 12px 0;
+  padding-left: 20px;
+  color: #666;
+}
+
+.modal-section li {
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.modal-section a {
+  color: #EC9D5C;
+  text-decoration: none;
+}
+
+.modal-section a:hover {
+  text-decoration: underline;
 }
 
 /* Boutons */
@@ -330,33 +500,6 @@ body.home-page.legal-page .main {
 .features-wrap {
   max-width: 540px;
   margin: 0 auto;
-}
-
-.hero-illustration {
-  margin-top: 2rem;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  display: flex;
-  justify-content: center;
-  padding-left: 12px;
-  padding-right: 12px;
-}
-
-.hero-illustration img {
-  width: 100%;
-  max-width: 1040px;
-  height: auto;
-  display: block;
-}
-
-@media (min-width: 768px) {
-  .hero-illustration {
-    margin-top: 3rem;
-  }
-  
-  .hero-illustration img {
-    max-width: 840px;
-  }
 }
 
 .feature {
@@ -616,8 +759,8 @@ body.home-page.legal-page .main {
   }
   
   .hero-title {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .hero-paragraph {
@@ -725,37 +868,14 @@ body.home-page.legal-page .main {
 
 @media (min-width: 768px) {
   .hero {
-    text-align: left;
-    padding-top: 88px;
-    padding-bottom: 120px;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
   
-  .hero-inner {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .hero-copy {
-    padding-top: 40px;
-    padding-right: 48px;
-    min-width: 448px;
-    max-width: 512px;
-    z-index: 1;
-  }
-  
-  .hero-cta {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    max-width: none;
-  }
-  
-  .hero-cta .button {
-    min-width: 170px;
-  }
-  
-  .hero-cta .button:first-child {
-    margin-right: 32px;
+  .hero-title {
+    font-size: 38px;
+    line-height: 48px;
   }
   
   .feature {

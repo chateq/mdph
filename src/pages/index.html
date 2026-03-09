@@ -7,211 +7,6 @@
     <title>— Projet de vie MDPH</title>
     <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600" rel="stylesheet">
     <link rel="stylesheet" href="/src/css/mdph-landing.css">
-    <style>
-        .body-wrap { max-width: none !important; }
-        .container, .container-sm {
-            max-width: 1120px !important;
-            margin-left: auto !important;
-            margin-right: auto !important;
-            padding-left: 12px;
-            padding-right: 12px;
-        }
-        .hero > .container {
-            margin-left: auto !important;
-            margin-right: auto !important;
-            padding-left: 12px;
-        }
-        .cta.section {
-            position: relative;
-            overflow: hidden;
-            min-height: 60vh;
-            display: flex;
-            align-items: center;
-            background: none !important;
-            background-size: 100% 100%;
-            width: 100vw;
-            margin-left: calc(50% - 50vw);
-        }
-        .cta-inner {
-            position: relative;
-            width: 100%;
-        }
-        @media (max-width: 640px) {
-            .hero > .container {
-                padding-left: 12px;
-            }
-        }
-        @media (min-width: 768px) {
-            .hero-inner { display: block !important; }
-            .hero-copy { width: 100% !important; max-width: none !important; }
-            .hero-title, .hero-paragraph { max-width: none !important; }
-        }
-
-        /* Styles des modales */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.9);
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            z-index: 1001;
-            max-width: 90vw;
-            max-height: 90vh;
-            width: 700px;
-            height: 80vh;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .modal.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .modal-inner {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 24px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .modal-header h3 {
-            margin: 0;
-            font-size: 20px;
-            font-weight: 600;
-            color: #2A293E;
-        }
-
-        .modal-close {
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-            color: #666;
-            padding: 0;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
-            transition: background-color 0.2s ease;
-        }
-
-        .modal-close:hover {
-            background-color: #f5f5f5;
-        }
-
-        .modal-content {
-            padding: 24px;
-            overflow-y: auto;
-            flex: 1;
-        }
-
-        .modal-section {
-            margin-bottom: 24px;
-        }
-
-        .modal-section:last-child {
-            margin-bottom: 0;
-        }
-
-        .modal-section h4 {
-            margin: 0 0 12px 0;
-            font-size: 16px;
-            font-weight: 600;
-            color: #2A293E;
-        }
-
-        .modal-section p {
-            margin: 0 0 12px 0;
-            line-height: 1.6;
-            color: #666;
-        }
-
-        .modal-section ul {
-            margin: 0 0 12px 0;
-            padding-left: 20px;
-            color: #666;
-        }
-
-        .modal-section li {
-            margin-bottom: 4px;
-            line-height: 1.5;
-        }
-
-        .modal-section a {
-            color: #EC9D5C;
-            text-decoration: none;
-        }
-
-        .modal-section a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .modal {
-                width: 95vw;
-                max-height: 95vh;
-            }
-            
-            .modal-header {
-                padding: 16px 20px;
-            }
-            
-            .modal-content {
-                padding: 20px;
-            }
-        }
-        
-        .nav-phone {
-            color: #2A293E;
-            font-weight: 600;
-            padding: 8px 12px;
-            border-radius: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            margin-left: auto;
-            font-size: 14px;
-        }
-        
-        /* Header identique aux autres pages */
-        .header {
-            background-color: #FFFEFD !important;
-            padding: 20px 0 !important;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-        }
-    </style>
 </head>
 <body class="home-page is-boxed has-animations">
     <div class="body-wrap boxed-container">
@@ -228,33 +23,16 @@
                 <div class="container">
                     <div class="hero-inner">
                         <div class="hero-copy">
-                            <h1 class="hero-title mt-0">Vous ne savez pas quoi écrire dans la partie “Projet de vie” de la MDPH ? Faites confiance à Handi’Accés !</h1>
-                            <p class="hero-paragraph">Handi’Accés vous aide à mettre des mots clairs sur vos difficultés quotidiennes, afin de rédiger la partie “Projet de vie / B - Vie quotidienne” du dossier MDPH (cerfa n°15692*01).</p>
+                            <h1 class="hero-title mt-0">Votre dossier MDPH <span class="typewriter" aria-label="refusé, incomplet, sous-évalué, mal compris"><span id="typewriter-word" class="typewriter__word">refusé</span></span> <span class="hero-static-optima">ou peut être structuré avec la méthode OPTIMA</span></h1>
+                            <p class="hero-paragraph">Analyse structurée et optimisation stratégique selon les critères d’évaluation MDPH.</p>
                             <div class="hero-cta">
-                                <a class="button button-primary" href="/form">Commencer</a>
-                            </div>
-                            <div class="hero-illustration">
-                                <img src="/ilustration1.png" alt="Illustration du formulaire MDPH" />
+                                <a class="button button-primary" href="/form">Evaluer ma situation</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="cta section">
-                <div class="container">
-                    <div class="cta-inner section-inner">
-                        <div class="cta-header text-center">
-                            <span class="glass-badge">Gratuit rapide et confidentiel</span>
-                            <h2 class="section-title mt-0">Commencez maintenant</h2>
-                            <p class="section-paragraph">Répondez à quelques questions, puis téléchargez votre PDF prêt à être joint à votre dossier MDPH. Vos réponses restent sur votre appareil : aucune donnée n'est stockée sur nos serveurs.</p>
-                            <div class="cta-cta">
-                                <a class="button button-primary" href="/form">Démarrer mon parcours</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </main>
 
         <!-- Modales -->
@@ -410,7 +188,6 @@
     <script type="module">
         import { createNavigation } from '/src/js/modules/navigation.js';
         
-        // Créer la navigation centralisée
         createNavigation();
         
         // Gestion des modales
@@ -435,29 +212,48 @@
                 document.body.style.overflow = '';
             }
 
-            // Ouverture des modales
             modalTriggers.forEach(trigger => {
                 trigger.addEventListener('click', function(e) {
                     e.preventDefault();
-                    const modalId = this.getAttribute('data-modal');
-                    openModal(modalId);
+                    openModal(this.getAttribute('data-modal'));
                 });
             });
 
-            // Fermeture avec les boutons X
-            closeButtons.forEach(button => {
-                button.addEventListener('click', closeModal);
-            });
-
-            // Fermeture en cliquant sur l'overlay
+            closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
             modalOverlay.addEventListener('click', closeModal);
-
-            // Fermeture avec la touche Échap
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeModal();
-                }
+                if (e.key === 'Escape') closeModal();
             });
+        })();
+
+        // Animation en fondu simple sur les mots rotatifs du hero
+        (function() {
+            const el = document.getElementById('typewriter-word');
+            const container = el?.parentElement;
+            if (!el || !container) return;
+
+            const words = ['refusé', 'incomplet', 'sous-évalué', 'mal compris'];
+            let wordIndex = 0;
+            const displayMs = 1800;
+            const fadeMs = 350;
+
+            function tick() {
+                container.classList.add('is-fading');
+
+                window.setTimeout(() => {
+                    wordIndex = (wordIndex + 1) % words.length;
+                    el.textContent = words[wordIndex];
+                    container.classList.remove('is-fading');
+                }, fadeMs);
+
+                window.setTimeout(tick, displayMs + fadeMs);
+            }
+
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                el.textContent = words[0];
+            } else {
+                tick();
+            }
         })();
     </script>
 </body>
