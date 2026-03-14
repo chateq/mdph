@@ -3,9 +3,9 @@
   "description": "Questions pour préparer un recours MDPH.",
   "questions": [
     {
-      "id": "mode_refus",
-      "title": "Voulez-vous faire :",
-      "description": "",
+      "id": "recours_choix_action",
+      "title": "Que souhaitez-vous faire ?",
+      "description": "Choisissez l'action que vous souhaitez entreprendre.",
       "type": "radio",
       "obligatoire": true,
       "options": [
@@ -14,24 +14,24 @@
       ]
     },
     {
-      "id": "type_recours",
-      "title": "Quel type de recours souhaitez-vous faire ? ",
-      "description": "",
+      "id": "recours_type",
+      "title": "Quel type de recours souhaitez-vous faire ?",
+      "description": "Précisez le type de recours que vous souhaitez engager.",
       "type": "radio",
       "obligatoire": true,
-      "condition_affichage": "mode_refus === 'recours'",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "options": [
         { "value": "rapo", "label": "RAPO" },
         { "value": "contentieux", "label": "Recours contentieux" }
       ]
     },
     {
-      "id": "aide_refusee",
-      "title": "Aide refusée",
-      "description": "Quelle aide a été refusée ? ",
+      "id": "recours_aides_refusees",
+      "title": "Quelles aides ont été refusées ?",
+      "description": "Cochez toutes les aides concernées par le refus.",
       "type": "checkbox_multiple",
       "obligatoire": true,
-      "condition_affichage": "recours",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "options": [
         { "value": "aah", "label": "AAH" },
         { "value": "pch", "label": "PCH" },
@@ -42,44 +42,44 @@
       ]
     },
     {
-      "id": "date_notification",
-      "title": "Date notification",
-      "description": "Quelle est la date de notification de la décision ? ",
+      "id": "recours_date_notification",
+      "title": "Quelle est la date de notification de la décision ?",
+      "description": "Indiquez la date à laquelle vous avez reçu la décision.",
       "type": "date",
       "obligatoire": true,
       "condition_affichage": "recours"
     },
     {
-      "id": "courrier_decision",
-      "title": "Courrier décision",
-      "description": "Avez-vous reçu le courrier de décision ? ",
+      "id": "recours_courrier_recu",
+      "title": "Avez-vous reçu le courrier de décision ?",
+      "description": "Confirmez la réception du courrier officiel de décision.",
       "type": "oui_non",
       "obligatoire": true,
       "condition_affichage": "recours"
     },
     {
-      "id": "demarche_deja_engagee",
-      "title": "Démarche déjà engagée",
-      "description": "Avez-vous déjà engagé une démarche (RAPO, avocat, etc.) ? ",
+      "id": "recours_demarche_en_cours",
+      "title": "Avez-vous déjà engagé une démarche ?",
+      "description": "Dites-nous si une procédure est déjà en cours (RAPO, avocat, etc.).",
       "type": "oui_non",
       "obligatoire": true,
       "condition_affichage": "recours"
     },
     {
-      "id": "analyse_fonctionnelle_complementaire",
-      "title": "Analyse fonctionnelle complémentaire",
-      "description": "Souhaitez-vous ajouter une analyse fonctionnelle complémentaire ? ",
+      "id": "recours_analyse_complementaire",
+      "title": "Souhaitez-vous ajouter une analyse fonctionnelle complémentaire ?",
+      "description": "Choisissez si vous souhaitez inclure une analyse détaillée.",
       "type": "oui_non",
       "obligatoire": true,
       "condition_affichage": "recours"
     },
     {
-      "id": "limitation_deplacements",
-      "title": "Dans quelle mesure votre situation limite vos déplacements ? ",
-      "description": "Échelle 0–4",
+      "id": "recours_limitation_deplacements",
+      "title": "Dans quelle mesure votre situation limite-t-elle vos déplacements ?",
+      "description": "Évaluez sur une échelle de 0 (aucune limitation) à 4 (très limité).",
       "type": "radio",
       "obligatoire": true,
-      "condition_affichage": "recours",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "options": [
         { "value": "0", "label": "0" },
         { "value": "1", "label": "1" },
@@ -89,12 +89,12 @@
       ]
     },
     {
-      "id": "limitation_autonomie",
-      "title": "Dans quelle mesure votre situation limite votre autonomie ?",
-      "description": "Échelle 0–4",
+      "id": "recours_limitation_autonomie",
+      "title": "Dans quelle mesure votre situation limite-t-elle votre autonomie ?",
+      "description": "Évaluez sur une échelle de 0 (aucune limitation) à 4 (très limité).",
       "type": "radio",
       "obligatoire": true,
-      "condition_affichage": "recours",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "options": [
         { "value": "0", "label": "0" },
         { "value": "1", "label": "1" },
@@ -104,12 +104,12 @@
       ]
     },
     {
-      "id": "limitation_travail",
-      "title": "Dans quelle mesure votre situation limite votre capacité à travailler ? ",
-      "description": "Échelle 0–4",
+      "id": "recours_limitation_travail",
+      "title": "Dans quelle mesure votre situation limite-t-elle votre capacité à travailler ?",
+      "description": "Évaluez sur une échelle de 0 (aucune limitation) à 4 (très limité).",
       "type": "radio",
       "obligatoire": true,
-      "condition_affichage": "recours",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "options": [
         { "value": "0", "label": "0" },
         { "value": "1", "label": "1" },
@@ -119,12 +119,12 @@
       ]
     },
     {
-      "id": "limitation_activites_quotidiennes",
-      "title": "Dans quelle mesure votre situation limite vos activités quotidiennes ? ",
-      "description": "Échelle 0–4",
+      "id": "recours_limitation_quotidien",
+      "title": "Dans quelle mesure votre situation limite-t-elle vos activités quotidiennes ?",
+      "description": "Évaluez sur une échelle de 0 (aucune limitation) à 4 (très limité).",
       "type": "radio",
       "obligatoire": true,
-      "condition_affichage": "recours",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "options": [
         { "value": "0", "label": "0" },
         { "value": "1", "label": "1" },
@@ -134,105 +134,105 @@
       ]
     },
     {
-      "id": "phrase_difficulte_quotidien",
-      "title": "En une phrase expliquez nous votre difficuté quotidienne",
-      "description": "En une phrase, qu’est-ce qui est le plus difficile dans votre quotidien ?",
+      "id": "recours_phrase_difficulte",
+      "title": "Décrivez votre difficulté principale en une phrase",
+      "description": "Rédigez une seule phrase qui résume votre principale difficulté au quotidien.",
       "type": "text",
       "obligatoire": true,
-      "condition_affichage": "recours",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "maxLength": 180,
       "placeholder": "Ex : Monter les escaliers est devenu très douloureux."
     },
     {
-      "id": "documents_notification_mdph",
-      "title": "Notification MDPH",
-      "description": "Avez-vous la notification MDPH ?",
+      "id": "recours_document_notification",
+      "title": "Avez-vous la notification officielle de la MDPH ?",
+      "description": "Confirmez que vous disposez du document de notification.",
       "type": "oui_non",
       "obligatoire": true,
       "condition_affichage": "recours"
     },
     {
-      "id": "documents_certificats_medicaux",
-      "title": "Certificats médicaux",
-      "description": "Avez-vous des certificats médicaux récents ?",
+      "id": "recours_document_certificats",
+      "title": "Avez-vous des certificats médicaux récents ?",
+      "description": "Indiquez si vous possédez des certificats médicaux à jour.",
       "type": "oui_non",
       "obligatoire": true,
       "condition_affichage": "recours"
     },
     {
-      "id": "documents_decisions_precedentes",
-      "title": "Décisions précédentes",
-      "description": "Avez-vous des décisions précédentes ?",
+      "id": "recours_document_decisions_precedentes",
+      "title": "Avez-vous des décisions MDPH précédentes ?",
+      "description": "Précisez si vous disposez d’anciennes décisions de la MDPH.",
       "type": "oui_non",
       "obligatoire": true,
       "condition_affichage": "recours"
     },
     {
-      "id": "upload_documents",
-      "title": "Upload document",
-      "description": "Téléchargez vos documents (notification, certificats, décisions)",
+      "id": "recours_upload_fichiers",
+      "title": "Téléchargez vos documents",
+      "description": "Joignez la notification, les certificats et les décisions précédentes.",
       "type": "file",
       "obligatoire": false,
       "condition_affichage": "recours"
     },
     {
-      "id": "contact_nom",
-      "sectionTitle": "Renseignez vos informations de contact",
+      "id": "recours_contact_nom",
+      "sectionTitle": "Vos informations de contact",
       "title": "Nom",
-      "description": "",
+      "description": "Entrez votre nom de famille.",
       "type": "text",
       "obligatoire": true,
-      "condition_affichage": "recours",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "placeholder": "Votre nom"
     },
     {
-      "id": "contact_prenom",
-      "sectionTitle": "Renseignez vos informations de contact",
+      "id": "recours_contact_prenom",
+      "sectionTitle": "Vos informations de contact",
       "title": "Prénom",
-      "description": "",
+      "description": "Entrez votre prénom.",
       "type": "text",
       "obligatoire": true,
-      "condition_affichage": "recours",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "placeholder": "Votre prénom"
     },
     {
-      "id": "contact_email",
-      "sectionTitle": "Renseignez vos informations de contact",
+      "id": "recours_contact_email",
+      "sectionTitle": "Vos informations de contact",
       "title": "Email",
-      "description": "",
+      "description": "Indiquez votre adresse email.",
       "type": "email",
       "obligatoire": true,
-      "condition_affichage": "recours",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "placeholder": "votre@email.com"
     },
     {
-      "id": "contact_telephone",
-      "sectionTitle": "Renseignez vos informations de contact",
+      "id": "recours_contact_telephone",
+      "sectionTitle": "Vos informations de contact",
       "title": "Téléphone",
-      "description": "",
+      "description": "Entrez votre numéro de téléphone.",
       "type": "text",
       "obligatoire": true,
-      "condition_affichage": "recours",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "placeholder": "Ex: 06 12 34 56 78"
     },
     {
-      "id": "contact_departement",
-      "sectionTitle": "Renseignez vos informations de contact",
+      "id": "recours_contact_departement",
+      "sectionTitle": "Vos informations de contact",
       "title": "Département",
-      "description": "",
+      "description": "Précisez votre numéro de département.",
       "type": "text",
       "obligatoire": true,
-      "condition_affichage": "recours",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "placeholder": "Ex: 75"
     },
     {
-      "id": "rgpd_consent_refus",
-      "sectionTitle": "veuillez accepter le consentement RGPD avant de continuer",
-      "title": "Consentement RGPD",
-      "description": "Consentement RGPD obligatoire.",
+      "id": "recours_rgpd_consent",
+      "sectionTitle": "Consentement RGPD",
+      "title": "J’accepte le traitement de mes données",
+      "description": "Cochez cette case pour accepter l’utilisation de vos données dans le cadre de ce recours.",
       "type": "checkbox_single",
       "obligatoire": true,
-      "condition_affichage": "recours",
+      "condition_affichage": "recours_choix_action === 'recours'",
       "checkboxLabel": "J’accepte l’utilisation de mes données pour générer mon recours et j’ai pris connaissance de la politique de confidentialité."
     }
   ]

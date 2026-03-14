@@ -320,6 +320,9 @@ body.home-page .card p {
 .pricing-body .pricing-features{list-style:none;padding:0;margin:0 0 12px}
 .pricing-body .pricing-features li{padding:4px 0 4px 20px;position:relative;font-size:13px;line-height:1.5}
 .pricing-body .pricing-features li::before{content:'✓';position:absolute;left:0;color:#16a34a;font-weight:700}
+.pricing-body .pricing-features li.no-tick{padding-left:0}
+.pricing-body .pricing-features li.no-tick::before{content:none}
+.pricing-body .pricing-features li.cross::before{content:'✕';color:#ef4444}
 .pricing-body .form-actions{margin-top:20px;gap:10px;flex-wrap:wrap}
 .pricing-body .form-actions .btn{font-size:12px;padding:8px 10px;min-height:36px;white-space:normal;line-height:1.25}
 .pricing-body .form-actions .btn-primary{font-size:12px;padding:8px 10px;min-height:36px}

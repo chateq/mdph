@@ -14,6 +14,8 @@ function isRecoursOrRefusFlow() {
 
     if (parcours === 'recours' || entry === 'refus') return true;
 
+    if (parcours === 'verification-dossier' || parcours === 'premiere-demande' || parcours === 'renouvellement' || parcours === 'aggravation') return false;
+
     const entryFlow = responses && typeof responses === 'object' ? responses.entry_flow : null;
     const typeDemande = responses && typeof responses === 'object' ? responses.type_demande : null;
     if (entryFlow === 'refus' || typeDemande === 'refus') return true;
@@ -180,10 +182,19 @@ function renderAccordion(openOfferId = null) {
         </div>
         <div class="pricing-body" data-body="recours" style="display:${openOfferId === 'recours' ? 'block' : 'none'};">
           <ul class="pricing-features">
-            <li><strong>Produits possibles</strong><br/>Analyse décision<br/>Recours RAPO<br/>Recours contentieux</li>
-            <li><strong>Choix livraison</strong><br/>STANDARD — Livraison sous 3h ouvrées<br/>PRIORITAIRE — Livraison sous 45 minutes</li>
-            <li><strong>Résumé achat</strong><br/>Document PDF structuré<br/>Échange gratuit 15 minutes<br/>Livraison par email sécurisé</li>
-            <li><strong>Mention</strong><br/>Aucune garantie de décision MDPH.</li>
+            <li class="no-tick"><strong>Produits possibles</strong></li>
+            <li>Analyse décision</li>
+            <li>Recours RAPO</li>
+            <li>Recours contentieux</li>
+            <li class="no-tick"><strong>Choix livraison</strong></li>
+            <li><strong>STANDARD</strong> — Livraison sous 3h ouvrées</li>
+            <li><strong>PRIORITAIRE</strong> — Livraison sous 45 minutes</li>
+            <li class="no-tick"><strong>Résumé achat</strong></li>
+            <li>document PDF structuré</li>
+            <li>échange gratuit 15 minutes</li>
+            <li>livraison par email sécurisé</li>
+            <li class="no-tick"><strong>Mention</strong></li>
+            <li class="cross">Aucune garantie de décision MDPH.</li>
           </ul>
           <div class="form-actions">
             <button class="btn btn-primary" id="payRecoursBtn" type="button">Continuer</button>
