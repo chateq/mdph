@@ -1,0 +1,59 @@
+{
+  "sections": [
+    {
+      "title": "Type de demande",
+      "description": "",
+      "questions": [
+        {
+          "id": "verif_type_dossier",
+          "title": "Quel type de dossier souhaitez-vous faire analyser ?",
+          "description": "Précisez la nature de votre demande MDPH.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "premiere", "label": "Première demande" },
+            { "value": "renouvellement", "label": "Renouvellement" },
+            { "value": "recours", "label": "Recours suite à un refus" },
+            { "value": "ne_sais_pas", "label": "Je ne sais pas" }
+          ]
+        },
+        {
+          "id": "verif_aides_demandees",
+          "title": "Quelles aides avez-vous demandées ?",
+          "description": "Cochez toutes les aides demandées dans votre dossier.",
+          "type": "checkbox_multiple",
+          "obligatoire": true,
+          "options": [
+            { "value": "aah", "label": "Allocation Adulte Handicapé (AAH)" },
+            { "value": "rqth", "label": "Reconnaissance de la Qualité de Travailleur Handicapé (RQTH)" },
+            { "value": "pch", "label": "Prestation de Compensation du Handicap (PCH)" },
+            { "value": "cmi", "label": "Carte Mobilité Inclusion (CMI)" },
+            { "value": "orientation_pro", "label": "Orientation professionnelle" },
+            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez l'aide demandée" }
+          ]
+        },
+        {
+          "id": "verif_aah_acces_emploi",
+          "title": "Votre dossier explique-t-il clairement pourquoi votre état de santé limite votre accès à l'emploi ?",
+          "description": "Évaluez la qualité de l'argumentation pour l'AAH concernant l'accès à l'emploi.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "verif_aides_demandees && verif_aides_demandees.includes('aah')",
+          "options": [
+            { "value": "oui", "label": "Oui" },
+            { "value": "partiellement", "label": "Partiellement" },
+            { "value": "non", "label": "Non" }
+          ]
+        },
+        {
+          "id": "verif_argument_principal",
+          "title": "Quel argument principal avez-vous utilisé dans votre dossier pour justifier cette demande ?",
+          "description": "Résumez en quelques mots l'argumentation principale de votre dossier.",
+          "type": "textarea",
+          "obligatoire": true,
+          "placeholder": "Exemple : Ma maladie chronique m'impose des absences fréquentes incompatible avec un emploi régulier"
+        }
+      ]
+    }
+  ]
+}

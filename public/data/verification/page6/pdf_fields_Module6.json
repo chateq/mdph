@@ -1,0 +1,9 @@
+{
+  "fields": [
+    { "name": "verif_coherence_projet_certificat", "type": "text", "description": "Cohérence projet/certificat" },
+    { "name": "verif_difference_projet_certificat", "type": "text", "description": "Différence projet/certificat" },
+    { "name": "verif_coherence_medical_dossier", "type": "text", "description": "Cohérence médical/dossier" },
+    { "name": "verif_incoherences_detectees", "type": "text", "description": "Incohérences détectées" },
+    { "name": "verif_incoherences_autre", "type": "text", "description": "Autre incohérence" }
+  ]
+}

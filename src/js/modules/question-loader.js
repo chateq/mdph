@@ -224,6 +224,10 @@ export async function loadAllQuestions() {
         pagesConfigPath = '/data/form_pages_recours.json';
       } else if (parcours === 'verification-dossier') {
         pagesConfigPath = '/data/form_pages_verification.json';
+      } else if (parcours === 'analyse_dossier') {
+        pagesConfigPath = '/data/form_pages_analyse_dossier.json';
+      } else if (parcours === 'renouvellement') {
+        pagesConfigPath = '/data/form_pages_renouvellement.json';
       }
     } catch {
     }
@@ -245,6 +249,11 @@ export async function loadAllQuestions() {
         const useQuestionProgress = pageConfig && pageConfig.progressMode === 'questions';
         
         if (pageData?.sections) {
+          const pageTotalQuestions = useQuestionProgress
+            ? pageData.sections.reduce((acc, s) => acc + (Array.isArray(s.questions) ? s.questions.length : 0), 0)
+            : 0;
+          let pageQuestionIndex = 0;
+
           for (const section of pageData.sections) {
             // TOUJOURS charger les sections, les conditions seront évaluées dynamiquement
             if (section.questions) {
@@ -260,9 +269,10 @@ export async function loadAllQuestions() {
                 isIntroduction: section.isIntroduction || false,
                 estimatedTime: section.estimatedTime,
                 isEntryFlow: useQuestionProgress ? true : (q.isEntryFlow || false),
-                progressStep: useQuestionProgress ? index + 1 : q.progressStep,
-                progressTotal: useQuestionProgress ? section.questions.length : q.progressTotal
+                progressStep: useQuestionProgress ? (pageQuestionIndex + index + 1) : q.progressStep,
+                progressTotal: useQuestionProgress ? pageTotalQuestions : q.progressTotal
               }));
+              pageQuestionIndex += section.questions.length;
               allQuestions.push(...questionsWithPage);
             } else {
               // Si c'est une section sans questions (comme l'introduction)

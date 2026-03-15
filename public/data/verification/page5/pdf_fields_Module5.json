@@ -1,0 +1,10 @@
+{
+  "fields": [
+    { "name": "verif_situation_pro", "type": "text", "description": "Situation professionnelle" },
+    { "name": "verif_travail_adapte", "type": "text", "description": "Travail adapté" },
+    { "name": "verif_amenagements", "type": "text", "description": "Aménagements poste" },
+    { "name": "verif_type_amenagements", "type": "text", "description": "Types aménagements" },
+    { "name": "verif_type_amenagements_autre", "type": "text", "description": "Autre aménagement" },
+    { "name": "verif_difficultes_persistantes", "type": "text", "description": "Difficultés persistantes" }
+  ]
+}

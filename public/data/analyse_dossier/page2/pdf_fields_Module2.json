@@ -1,0 +1,12 @@
+{
+  "fields": [
+    { "name": "analyse_aide_refusee", "type": "text", "description": "Aide refusée" },
+    { "name": "analyse_type_demande", "type": "text", "description": "Type de demande" },
+    { "name": "analyse_date_decision", "type": "text", "description": "Date décision" },
+    { "name": "analyse_decision_correspond_a", "type": "text", "description": "Type de décision" },
+    { "name": "analyse_motif_courrier", "type": "text", "description": "Motif courrier" },
+    { "name": "analyse_phrase_courrier", "type": "text", "description": "Phrase courrier" },
+    { "name": "analyse_pathologie", "type": "text", "description": "Pathologie" },
+    { "name": "analyse_docs_pro", "type": "text", "description": "Documents pro" }
+  ]
+}

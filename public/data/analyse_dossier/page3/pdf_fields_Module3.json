@@ -1,0 +1,11 @@
+{
+  "fields": [
+    { "name": "rapo_aide_refusee", "type": "text", "description": "Aide refusée" },
+    { "name": "rapo_type_demande", "type": "text", "description": "Type demande" },
+    { "name": "rapo_date_decision", "type": "text", "description": "Date décision" },
+    { "name": "rapo_numero_dossier", "type": "text", "description": "Numéro dossier" },
+    { "name": "rapo_type_decision", "type": "text", "description": "Type décision" },
+    { "name": "rapo_motif_refus", "type": "text", "description": "Motif refus" },
+    { "name": "rapo_phrase_refus", "type": "text", "description": "Phrase refus" }
+  ]
+}

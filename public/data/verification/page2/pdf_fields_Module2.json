@@ -1,0 +1,9 @@
+{
+  "fields": [
+    { "name": "verif_type_dossier", "type": "text", "description": "Type de dossier" },
+    { "name": "verif_aides_demandees", "type": "text", "description": "Aides demandées" },
+    { "name": "verif_aides_autre_text", "type": "text", "description": "Autre aide (précision)" },
+    { "name": "verif_aah_acces_emploi", "type": "text", "description": "Argumentation AAH accès emploi" },
+    { "name": "verif_argument_principal", "type": "text", "description": "Argument principal" }
+  ]
+}

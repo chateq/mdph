@@ -1,0 +1,59 @@
+{
+  "sections": [
+    {
+      "title": "Type de demande",
+      "description": "",
+      "questions": [
+        {
+          "id": "renouv_type_dossier",
+          "title": "Quel type de dossier souhaitez-vous faire analyser ?",
+          "description": "Indiquez le type de demande.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "premiere", "label": "Première demande" },
+            { "value": "renouvellement", "label": "Renouvellement" },
+            { "value": "recours", "label": "Recours suite à un refus" },
+            { "value": "ne_sais_pas", "label": "Je ne sais pas" }
+          ]
+        },
+        {
+          "id": "renouv_aides_demandees",
+          "title": "Quelles aides avez-vous demandées ?",
+          "description": "Cochez toutes les aides demandées dans votre dossier.",
+          "type": "checkbox_multiple",
+          "obligatoire": true,
+          "options": [
+            { "value": "aah", "label": "AAH" },
+            { "value": "rqth", "label": "RQTH" },
+            { "value": "pch", "label": "PCH" },
+            { "value": "cmi", "label": "Carte mobilité inclusion" },
+            { "value": "orientation_pro", "label": "Orientation professionnelle" },
+            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez l'aide demandée" }
+          ]
+        },
+        {
+          "id": "renouv_aah_acces_emploi",
+          "title": "Votre dossier explique-t-il clairement pourquoi votre état de santé limite votre accès à l'emploi ?",
+          "description": "Évaluez la qualité de l'argumentation pour l'AAH concernant l'accès à l'emploi.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "renouv_aides_demandees && renouv_aides_demandees.includes('aah')",
+          "options": [
+            { "value": "oui", "label": "Oui" },
+            { "value": "partiellement", "label": "Partiellement" },
+            { "value": "non", "label": "Non" }
+          ]
+        },
+        {
+          "id": "renouv_argument_principal",
+          "title": "Quel argument principal avez-vous utilisé dans votre dossier pour justifier cette demande ?",
+          "description": "Résumez en quelques mots l'argumentation principale de votre dossier.",
+          "type": "text",
+          "obligatoire": true,
+          "placeholder": "Exemple : Mon état de santé limite fortement ma capacité à travailler"
+        }
+      ]
+    }
+  ]
+}

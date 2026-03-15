@@ -11,7 +11,7 @@ export function updateProgress(idx, visible) {
   if (currentQuestion && currentQuestion.isEntryFlow) {
     const currentStep = currentQuestion.progressStep || idx + 1;
     const totalSteps = currentQuestion.progressTotal || 1;
-    const currentTitle = currentQuestion.title || currentQuestion.sectionTitle || '';
+    const currentTitle = currentQuestion.pageTitle || currentQuestion.title || '';
 
     $('progressText').textContent = `Étape ${currentStep} sur ${totalSteps} – ${currentTitle}`;
     $('progressFill').style.width = totalSteps ? `${Math.round((currentStep / totalSteps) * 100)}%` : '0%';

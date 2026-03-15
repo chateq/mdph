@@ -1,0 +1,57 @@
+{
+  "sections": [
+    {
+      "title": "Cohérence du dossier",
+      "description": "",
+      "questions": [
+        {
+          "id": "renouv_coherence_projet_certificat",
+          "title": "Votre projet de vie décrit-il les mêmes difficultés que celles mentionnées dans votre certificat médical ?",
+          "description": "Comparez les informations du projet de vie et du certificat.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "oui", "label": "Oui" },
+            { "value": "partiellement", "label": "Partiellement" },
+            { "value": "non", "label": "Non" }
+          ]
+        },
+        {
+          "id": "renouv_difference_projet_certificat",
+          "title": "Quelle différence existe entre les deux ?",
+          "description": "Décrivez la différence.",
+          "type": "text",
+          "obligatoire": true,
+          "condition_affichage": "renouv_coherence_projet_certificat === 'partiellement' || renouv_coherence_projet_certificat === 'non'",
+          "placeholder": "Exemple : Le certificat minimise la douleur"
+        },
+        {
+          "id": "renouv_coherence_medical_dossier",
+          "title": "Les documents médicaux et votre dossier racontent-ils la même réalité ?",
+          "description": "Évaluez la cohérence globale.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "oui", "label": "Oui" },
+            { "value": "partiellement", "label": "Partiellement" },
+            { "value": "non", "label": "Non" }
+          ]
+        },
+        {
+          "id": "renouv_incoherences_detectees",
+          "title": "Quels éléments semblent incohérents ?",
+          "description": "Cochez les domaines où vous identifiez des contradictions.",
+          "type": "checkbox_multiple",
+          "obligatoire": true,
+          "condition_affichage": "renouv_coherence_medical_dossier === 'partiellement' || renouv_coherence_medical_dossier === 'non'",
+          "options": [
+            { "value": "description_handicap", "label": "Description du handicap" },
+            { "value": "limitations_quotidiennes", "label": "Limitations quotidiennes" },
+            { "value": "capacite_travail", "label": "Capacité de travail" },
+            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
+          ]
+        }
+      ]
+    }
+  ]
+}

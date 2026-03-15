@@ -1,0 +1,13 @@
+{
+  "fields": [
+    { "name": "renouv_certificat_6mois", "type": "text", "description": "Certificat médical < 6 mois" },
+    { "name": "renouv_nouveau_certificat_prevu", "type": "text", "description": "Nouveau certificat prévu" },
+    { "name": "renouv_certificat_description", "type": "text", "description": "Qualité de description du certificat" },
+    { "name": "renouv_certificat_contenu_principal", "type": "text", "description": "Contenu principal du certificat" },
+    { "name": "renouv_certificat_contenu_principal_text", "type": "text", "description": "Précision - autre contenu certificat" },
+    { "name": "renouv_amelioration_certificat", "type": "text", "description": "Améliorations attendues sur le certificat" },
+    { "name": "renouv_comptes_rendus_recents", "type": "text", "description": "Comptes rendus récents" },
+    { "name": "renouv_specialistes", "type": "text", "description": "Spécialistes" },
+    { "name": "renouv_specialistes_text", "type": "text", "description": "Précision - autre spécialiste" }
+  ]
+}

@@ -1,14 +1,10 @@
-
 {
-  "title": "Recours contentieux",
-  "description": "Préparez votre recours contentieux étape par étape.",
   "sections": [
     {
       "id": "autorite_juridiction",
       "title": "Autorité administrative et juridiction",
       "condition_section": "recours_type === 'contentieux'",
       "questions": [
-
         {
           "id": "contentieux_mdph_departement",
           "title": "Dans quel département se situe la MDPH qui a pris la décision contestée ?",

@@ -1,0 +1,5 @@
+{
+  "fields": [
+    { "name": "renouv_point_important", "type": "text", "description": "Point le plus important" }
+  ]
+}

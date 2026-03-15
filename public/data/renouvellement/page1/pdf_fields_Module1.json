@@ -1,0 +1,10 @@
+{
+  "fields": [
+    { "name": "renouv_dossier_prepare", "type": "text", "description": "Votre dossier MDPH est-il déjà préparé ?" },
+    { "name": "renouv_upload_dossier", "type": "file", "description": "Téléversement du dossier" },
+    { "name": "renouv_element_manquant", "type": "text", "description": "Élément manquant principalement" },
+    { "name": "renouv_element_manquant_text", "type": "text", "description": "Précision - élément manquant" },
+    { "name": "renouv_date_inconnue", "type": "text", "description": "Choix date ou inconnue" },
+    { "name": "date_completion_prevue", "type": "text", "description": "Date de complétion prévue" }
+  ]
+}

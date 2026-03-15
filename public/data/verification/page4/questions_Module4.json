@@ -1,0 +1,101 @@
+{
+  "sections": [
+    {
+      "title": "Limitations fonctionnelles",
+      "description": "",
+      "questions": [
+        {
+          "id": "verif_limitation_deplacer",
+          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour vous déplacer ?",
+          "description": "Évaluez sur une échelle de 0 (aucune difficulté) à 4 (impossible seul).",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "0", "label": "0 - Aucune difficulté" },
+            { "value": "1", "label": "1 - Difficulté légère" },
+            { "value": "2", "label": "2 - Difficulté modérée" },
+            { "value": "3", "label": "3 - Difficulté importante" },
+            { "value": "4", "label": "4 - Impossible seul" }
+          ]
+        },
+        {
+          "id": "verif_limitation_taches",
+          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour effectuer les tâches quotidiennes ?",
+          "description": "Évaluez les limitations pour les activités de la vie quotidienne.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "0", "label": "0 - Aucune difficulté" },
+            { "value": "1", "label": "1 - Difficulté légère" },
+            { "value": "2", "label": "2 - Difficulté modérée" },
+            { "value": "3", "label": "3 - Difficulté importante" },
+            { "value": "4", "label": "4 - Impossible seul" }
+          ]
+        },
+        {
+          "id": "verif_limitation_concentrer",
+          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour vous concentrer ?",
+          "description": "Évaluez les limitations de concentration et d'attention.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "0", "label": "0 - Aucune difficulté" },
+            { "value": "1", "label": "1 - Difficulté légère" },
+            { "value": "2", "label": "2 - Difficulté modérée" },
+            { "value": "3", "label": "3 - Difficulté importante" },
+            { "value": "4", "label": "4 - Impossible seul" }
+          ]
+        },
+        {
+          "id": "verif_limitation_rythme",
+          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour maintenir un rythme d'activité ?",
+          "description": "Évaluez les limitations pour maintenir une activité soutenue.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "0", "label": "0 - Aucune difficulté" },
+            { "value": "1", "label": "1 - Difficulté légère" },
+            { "value": "2", "label": "2 - Difficulté modérée" },
+            { "value": "3", "label": "3 - Difficulté importante" },
+            { "value": "4", "label": "4 - Impossible seul" }
+          ]
+        },
+        {
+          "id": "verif_frequence_difficultes",
+          "title": "À quelle fréquence ces difficultés apparaissent-elles ?",
+          "description": "Précisez la régularité des limitations fonctionnelles.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "verif_limitation_deplacer >= '3' || verif_limitation_taches >= '3' || verif_limitation_concentrer >= '3' || verif_limitation_rythme >= '3'",
+          "options": [
+            { "value": "tous_jours", "label": "Tous les jours" },
+            { "value": "plusieurs_fois", "label": "Plusieurs fois par semaine" },
+            { "value": "occasionnellement", "label": "Occasionnellement" }
+          ]
+        },
+        {
+          "id": "verif_impact_difficultes",
+          "title": "Lorsque ces difficultés apparaissent, êtes-vous obligé de :",
+          "description": "Décrivez les conséquences des limitations sur vos activités.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "verif_limitation_deplacer >= '3' || verif_limitation_taches >= '3' || verif_limitation_concentrer >= '3' || verif_limitation_rythme >= '3'",
+          "options": [
+            { "value": "ralentir", "label": "Ralentir votre activité" },
+            { "value": "interrompre", "label": "Interrompre votre activité" },
+            { "value": "demander_aide", "label": "Demander de l'aide" }
+          ]
+        },
+        {
+          "id": "verif_exemple_concret",
+          "title": "Décrivez une situation concrète où cette difficulté vous empêche d'agir normalement",
+          "description": "Donnez un exemple précis illustrant vos limitations.",
+          "type": "textarea",
+          "obligatoire": true,
+          "condition_affichage": "verif_limitation_deplacer >= '3' || verif_limitation_taches >= '3' || verif_limitation_concentrer >= '3' || verif_limitation_rythme >= '3'",
+          "placeholder": "Exemple : Hier matin, j'ai voulu faire les courses mais la fatigue m'a obligé à rentrer après 10 minutes"
+        }
+      ]
+    }
+  ]
+}

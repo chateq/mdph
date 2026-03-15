@@ -1,0 +1,9 @@
+{
+  "fields": [
+    { "name": "renouv_coherence_projet_certificat", "type": "text", "description": "Cohérence projet de vie / certificat" },
+    { "name": "renouv_difference_projet_certificat", "type": "text", "description": "Différence projet/certificat" },
+    { "name": "renouv_coherence_medical_dossier", "type": "text", "description": "Cohérence documents médicaux / dossier" },
+    { "name": "renouv_incoherences_detectees", "type": "text", "description": "Éléments incohérents" },
+    { "name": "renouv_incoherences_detectees_text", "type": "text", "description": "Précision - autre incohérence" }
+  ]
+}

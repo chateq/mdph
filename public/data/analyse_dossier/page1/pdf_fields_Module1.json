@@ -1,0 +1,6 @@
+{
+  "fields": [
+    { "name": "recours_choix_action", "type": "text", "description": "Choix action" },
+    { "name": "recours_type", "type": "text", "description": "Type de recours" }
+  ]
+}

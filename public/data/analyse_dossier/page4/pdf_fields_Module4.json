@@ -1,0 +1,11 @@
+{
+  "fields": [
+    { "name": "contentieux_mdph_departement", "type": "text", "description": "MDPH département" },
+    { "name": "contentieux_aide_concernee", "type": "text", "description": "Aide concernée" },
+    { "name": "contentieux_type_demande", "type": "text", "description": "Type demande" },
+    { "name": "contentieux_date_decision", "type": "text", "description": "Date décision" },
+    { "name": "contentieux_numero_dossier", "type": "text", "description": "Numéro dossier" },
+    { "name": "contentieux_motif_courrier", "type": "text", "description": "Motif" },
+    { "name": "contentieux_phrase_courrier", "type": "text", "description": "Phrase" }
+  ]
+}

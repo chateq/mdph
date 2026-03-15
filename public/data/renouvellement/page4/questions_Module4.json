@@ -1,0 +1,101 @@
+{
+  "sections": [
+    {
+      "title": "Limitations fonctionnelles",
+      "description": "",
+      "questions": [
+        {
+          "id": "renouv_limitation_deplacer",
+          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour vous déplacer ?",
+          "description": "0 — aucune difficulté, 4 — impossible seul",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "0", "label": "0 — aucune difficulté" },
+            { "value": "1", "label": "1 — difficulté légère" },
+            { "value": "2", "label": "2 — difficulté modérée" },
+            { "value": "3", "label": "3 — difficulté importante" },
+            { "value": "4", "label": "4 — impossible seul" }
+          ]
+        },
+        {
+          "id": "renouv_limitation_taches",
+          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour effectuer les tâches quotidiennes ?",
+          "description": "0 — aucune difficulté, 4 — impossible seul",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "0", "label": "0 — aucune difficulté" },
+            { "value": "1", "label": "1 — difficulté légère" },
+            { "value": "2", "label": "2 — difficulté modérée" },
+            { "value": "3", "label": "3 — difficulté importante" },
+            { "value": "4", "label": "4 — impossible seul" }
+          ]
+        },
+        {
+          "id": "renouv_limitation_concentration",
+          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour vous concentrer ?",
+          "description": "0 — aucune difficulté, 4 — impossible seul",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "0", "label": "0 — aucune difficulté" },
+            { "value": "1", "label": "1 — difficulté légère" },
+            { "value": "2", "label": "2 — difficulté modérée" },
+            { "value": "3", "label": "3 — difficulté importante" },
+            { "value": "4", "label": "4 — impossible seul" }
+          ]
+        },
+        {
+          "id": "renouv_limitation_rythme",
+          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour maintenir un rythme d'activité ?",
+          "description": "0 — aucune difficulté, 4 — impossible seul",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "0", "label": "0 — aucune difficulté" },
+            { "value": "1", "label": "1 — difficulté légère" },
+            { "value": "2", "label": "2 — difficulté modérée" },
+            { "value": "3", "label": "3 — difficulté importante" },
+            { "value": "4", "label": "4 — impossible seul" }
+          ]
+        },
+        {
+          "id": "renouv_frequence_difficultes",
+          "title": "À quelle fréquence ces difficultés apparaissent-elles ?",
+          "description": "Répondez si au moins une difficulté est à 3 ou 4.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "renouv_limitation_deplacer === '3' || renouv_limitation_deplacer === '4' || renouv_limitation_taches === '3' || renouv_limitation_taches === '4' || renouv_limitation_concentration === '3' || renouv_limitation_concentration === '4' || renouv_limitation_rythme === '3' || renouv_limitation_rythme === '4'",
+          "options": [
+            { "value": "tous_les_jours", "label": "Tous les jours" },
+            { "value": "plusieurs_fois_par_semaine", "label": "Plusieurs fois par semaine" },
+            { "value": "occasionnellement", "label": "Occasionnellement" }
+          ]
+        },
+        {
+          "id": "renouv_impact_difficultes",
+          "title": "Lorsque ces difficultés apparaissent, êtes-vous obligé de :",
+          "description": "Choisissez ce qui correspond le mieux.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "renouv_limitation_deplacer === '3' || renouv_limitation_deplacer === '4' || renouv_limitation_taches === '3' || renouv_limitation_taches === '4' || renouv_limitation_concentration === '3' || renouv_limitation_concentration === '4' || renouv_limitation_rythme === '3' || renouv_limitation_rythme === '4'",
+          "options": [
+            { "value": "ralentir", "label": "Ralentir votre activité" },
+            { "value": "interrompre", "label": "Interrompre votre activité" },
+            { "value": "demander_aide", "label": "Demander de l'aide" }
+          ]
+        },
+        {
+          "id": "renouv_exemple_concret",
+          "title": "Décrivez une situation concrète où cette difficulté vous empêche d'agir normalement.",
+          "description": "Donnez un exemple concret.",
+          "type": "text",
+          "obligatoire": true,
+          "condition_affichage": "renouv_limitation_deplacer === '3' || renouv_limitation_deplacer === '4' || renouv_limitation_taches === '3' || renouv_limitation_taches === '4' || renouv_limitation_concentration === '3' || renouv_limitation_concentration === '4' || renouv_limitation_rythme === '3' || renouv_limitation_rythme === '4'",
+          "placeholder": "Exemple : Je ne peux plus faire les courses seul"
+        }
+      ]
+    }
+  ]
+}

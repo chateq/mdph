@@ -20,6 +20,10 @@ export async function loadFormPages() {
         pagesConfigPath = '/data/form_pages_recours.json';
       } else if (parcours === 'verification-dossier') {
         pagesConfigPath = '/data/form_pages_verification.json';
+      } else if (parcours === 'analyse_dossier') {
+        pagesConfigPath = '/data/form_pages_analyse_dossier.json';
+      } else if (parcours === 'renouvellement') {
+        pagesConfigPath = '/data/form_pages_renouvellement.json';
       }
     } catch {
     }

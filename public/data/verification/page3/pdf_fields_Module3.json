@@ -1,0 +1,13 @@
+{
+  "fields": [
+    { "name": "verif_certificat_6mois", "type": "text", "description": "Certificat < 6 mois" },
+    { "name": "verif_nouveau_certificat_prevu", "type": "text", "description": "Nouveau certificat prévu" },
+    { "name": "verif_certificat_description", "type": "text", "description": "Qualité description certificat" },
+    { "name": "verif_certificat_desc_principale", "type": "text", "description": "Contenu principal certificat" },
+    { "name": "verif_certificat_autre_text", "type": "text", "description": "Précision contenu certificat" },
+    { "name": "verif_amelioration_certificat", "type": "text", "description": "Améliorations certificat" },
+    { "name": "verif_comptes_rendus_recents", "type": "text", "description": "Comptes rendus récents" },
+    { "name": "verif_specialistes", "type": "text", "description": "Spécialistes" },
+    { "name": "verif_specialistes_autre", "type": "text", "description": "Autre spécialiste" }
+  ]
+}

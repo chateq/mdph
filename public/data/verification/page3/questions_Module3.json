@@ -1,0 +1,94 @@
+{
+  "sections": [
+    {
+      "title": "Solidité médicale",
+      "description": "",
+      "questions": [
+        {
+          "id": "verif_certificat_6mois",
+          "title": "Votre certificat médical date-t-il de moins de 6 mois ?",
+          "description": "Vérifiez la date de rédaction de votre certificat médical.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "oui", "label": "Oui" },
+            { "value": "non", "label": "Non" },
+            { "value": "ne_sais_pas", "label": "Je ne sais pas" }
+          ]
+        },
+        {
+          "id": "verif_nouveau_certificat_prevu",
+          "title": "Un nouveau certificat médical est-il prévu ?",
+          "description": "Indiquez si vous prévoyez d'obtenir un certificat médical récent.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "verif_certificat_6mois === 'non'",
+          "options": [
+            { "value": "oui", "label": "Oui" },
+            { "value": "non", "label": "Non" }
+          ]
+        },
+        {
+          "id": "verif_certificat_description",
+          "title": "Votre certificat médical décrit-il clairement votre diagnostic, vos limitations fonctionnelles et l'impact sur votre quotidien ?",
+          "description": "Évaluez la complétude des informations médicales dans votre certificat.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "oui", "label": "Oui clairement" },
+            { "value": "partiellement", "label": "Partiellement" },
+            { "value": "non", "label": "Non" }
+          ]
+        },
+        {
+          "id": "verif_certificat_desc_principale",
+          "title": "Que décrit principalement votre certificat médical ?",
+          "description": "Précisez le contenu principal actuel de votre certificat.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "verif_certificat_description === 'partiellement' || verif_certificat_description === 'non'",
+          "options": [
+            { "value": "diagnostic", "label": "Le diagnostic uniquement" },
+            { "value": "symptomes", "label": "Les symptômes" },
+            { "value": "traitements", "label": "Les traitements" },
+            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
+          ]
+        },
+        {
+          "id": "verif_amelioration_certificat",
+          "title": "Selon vous, que devrait préciser votre médecin pour mieux décrire votre situation ?",
+          "description": "Identifiez les informations manquantes dans votre certificat médical.",
+          "type": "textarea",
+          "obligatoire": true,
+          "placeholder": "Exemple : Mon médecin devrait préciser l'impact de la fatigue chronique sur ma capacité à maintenir un emploi"
+        },
+        {
+          "id": "verif_comptes_rendus_recents",
+          "title": "Disposez-vous de comptes rendus récents de spécialistes ?",
+          "description": "Indiquez si vous avez des documents de spécialistes datant de moins d'un an.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "oui", "label": "Oui" },
+            { "value": "non", "label": "Non" }
+          ]
+        },
+        {
+          "id": "verif_specialistes",
+          "title": "Quels spécialistes vous suivent ?",
+          "description": "Cochez tous les spécialistes qui assurent votre suivi médical.",
+          "type": "checkbox_multiple",
+          "obligatoire": true,
+          "condition_affichage": "verif_comptes_rendus_recents === 'oui'",
+          "options": [
+            { "value": "neurologue", "label": "Neurologue" },
+            { "value": "psychiatre", "label": "Psychiatre" },
+            { "value": "rhumatologue", "label": "Rhumatologue" },
+            { "value": "antidouleur", "label": "Centre antidouleur" },
+            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez le spécialiste" }
+          ]
+        }
+      ]
+    }
+  ]
+}

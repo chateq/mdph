@@ -1,0 +1,9 @@
+{
+  "fields": [
+    { "name": "renouv_type_dossier", "type": "text", "description": "Type de dossier" },
+    { "name": "renouv_aides_demandees", "type": "text", "description": "Aides demandées" },
+    { "name": "autre_text", "type": "text", "description": "Précision - autre aide" },
+    { "name": "renouv_aah_acces_emploi", "type": "text", "description": "Argumentation AAH - accès à l'emploi" },
+    { "name": "renouv_argument_principal", "type": "text", "description": "Argument principal" }
+  ]
+}

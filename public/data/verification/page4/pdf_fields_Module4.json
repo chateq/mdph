@@ -1,0 +1,11 @@
+{
+  "fields": [
+    { "name": "verif_limitation_deplacer", "type": "text", "description": "Limitation déplacements" },
+    { "name": "verif_limitation_taches", "type": "text", "description": "Limitation tâches quotidiennes" },
+    { "name": "verif_limitation_concentrer", "type": "text", "description": "Limitation concentration" },
+    { "name": "verif_limitation_rythme", "type": "text", "description": "Limitation rythme" },
+    { "name": "verif_frequence_difficultes", "type": "text", "description": "Fréquence difficultés" },
+    { "name": "verif_impact_difficultes", "type": "text", "description": "Impact difficultés" },
+    { "name": "verif_exemple_concret", "type": "text", "description": "Exemple concret" }
+  ]
+}

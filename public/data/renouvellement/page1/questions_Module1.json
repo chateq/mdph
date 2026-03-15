@@ -1,0 +1,67 @@
+{
+  "sections": [
+    {
+      "title": "Votre dossier MDPH est-il déjà préparé ?",
+      "description": "",
+      "questions": [
+        {
+          "id": "renouv_dossier_prepare",
+          "title": "Votre dossier MDPH est-il déjà préparé ?",
+          "description": "Indiquez l'état actuel de préparation de votre dossier.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "pret", "label": "Oui, il est prêt" },
+            { "value": "partiel", "label": "Oui, mais il manque quelques éléments" },
+            { "value": "preparation", "label": "Non, il est encore en préparation" }
+          ]
+        },
+        {
+          "id": "renouv_upload_dossier",
+          "title": "Téléversez votre dossier MDPH.",
+          "description": "Formats acceptés : PDF, JPG, PNG. Jusqu'à 20 images ou 1 fichier PDF complet.",
+          "type": "file",
+          "obligatoire": true,
+          "multiple": true,
+          "accept": ".pdf,.jpg,.jpeg,.png",
+          "condition_affichage": "renouv_dossier_prepare === 'pret' || renouv_dossier_prepare === 'partiel'"
+        },
+        {
+          "id": "renouv_element_manquant",
+          "title": "Quel élément manque principalement ?",
+          "description": "Sélectionnez l'élément essentiel qui manque à votre dossier.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "renouv_dossier_prepare === 'partiel' || renouv_dossier_prepare === 'preparation'",
+          "options": [
+            { "value": "certificat_medical", "label": "Certificat médical" },
+            { "value": "comptes_rendus_medicaux", "label": "Comptes rendus médicaux" },
+            { "value": "projet_de_vie", "label": "Projet de vie" },
+            { "value": "formulaire_administratif", "label": "Formulaire administratif" },
+            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez l'élément manquant" }
+          ]
+        },
+        {
+          "id": "renouv_date_inconnue",
+          "title": "Je ne sais pas encore",
+          "description": "Choisissez si vous souhaitez sélectionner une date ou indiquer que vous ne savez pas encore.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "renouv_dossier_prepare === 'partiel' || renouv_dossier_prepare === 'preparation'",
+          "options": [
+            { "value": "date", "label": "Je choisis une date" },
+            { "value": "inconnue", "label": "Je ne sais pas encore" }
+          ]
+        },
+        {
+          "id": "date_completion_prevue",
+          "title": "Quand pensez-vous pouvoir compléter votre dossier MDPH ?",
+          "description": "Sélectionnez une date prévisionnelle.",
+          "type": "date",
+          "obligatoire": true,
+          "condition_affichage": "(renouv_dossier_prepare === 'partiel' || renouv_dossier_prepare === 'preparation') && renouv_date_inconnue === 'date'"
+        }
+      ]
+    }
+  ]
+}

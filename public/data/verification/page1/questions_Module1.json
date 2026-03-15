@@ -1,0 +1,66 @@
+{
+  "sections": [
+    {
+      "title": "Indiquez l'état actuel de préparation de votre dossier.",
+      "description": "",
+      "questions": [
+        {
+          "id": "verif_dossier_prepare",
+          "title": "Votre dossier MDPH est-il déjà préparé ?",
+          "description": "Indiquez l'état actuel de préparation de votre dossier.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "pret", "label": "Oui, il est prêt" },
+            { "value": "partiel", "label": "Oui, mais il manque quelques éléments" },
+            { "value": "preparation", "label": "Non, il est encore en préparation" }
+          ]
+        },
+        {
+          "id": "verif_upload_dossier",
+          "title": "Téléversez votre dossier MDPH",
+          "description": "Formats acceptés : PDF, JPG, PNG. Jusqu'à 20 images ou 1 fichier PDF complet.",
+          "type": "file",
+          "obligatoire": true,
+          "multiple": true,
+          "accept": ".pdf,.jpg,.jpeg,.png",
+          "condition_affichage": "verif_dossier_prepare === 'pret' || verif_dossier_prepare === 'partiel'"
+        },
+        {
+          "id": "verif_element_manquant",
+          "title": "Quel élément manque principalement ?",
+          "description": "Sélectionnez l'élément essentiel qui fait défaut à votre dossier.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "verif_dossier_prepare === 'partiel' || verif_dossier_prepare === 'preparation'",
+          "options": [
+            { "value": "certificat_medical", "label": "Certificat médical" },
+            { "value": "comptes_rendus", "label": "Comptes rendus médicaux" },
+            { "value": "projet_vie", "label": "Projet de vie" },
+            { "value": "formulaire_admin", "label": "Formulaire administratif" },
+            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez l'élément manquant" }
+          ]
+        },
+        {
+          "id": "verif_date_completion",
+          "title": "Quand pensez-vous pouvoir compléter votre dossier MDPH ?",
+          "description": "Sélectionnez une date prévisionnelle de finalisation.",
+          "type": "date",
+          "obligatoire": true,
+          "condition_affichage": "verif_dossier_prepare === 'partiel' || verif_dossier_prepare === 'preparation'"
+        },
+        {
+          "id": "verif_date_inconnue",
+          "title": "Je ne sais pas encore quand je pourrai compléter mon dossier",
+          "description": "Cochez cette case si vous n'avez pas de date prévisionnelle.",
+          "type": "checkbox_multiple",
+          "obligatoire": false,
+          "condition_affichage": "verif_dossier_prepare === 'partiel' || verif_dossier_prepare === 'preparation'",
+          "options": [
+            { "value": "inconnue", "label": "Je ne sais pas encore" }
+          ]
+        }
+      ]
+    }
+  ]
+}

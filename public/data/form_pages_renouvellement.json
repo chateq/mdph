@@ -1,0 +1,75 @@
+
+{
+  "pages": [
+    {
+      "id": "page1",
+      "title": "Renouvellement / import du dossier",
+      "description": "Importez votre dossier et indiquez son niveau de préparation.",
+      "questionsFile": "renouvellement/page1/questions_Module1.json",
+      "pdfMappingFile": "renouvellement/page1/pdf_fields_Module1.json",
+      "order": 1,
+      "progressMode": "questions"
+    },
+    {
+      "id": "page2",
+      "title": "Renouvellement / type de demande",
+      "description": "Précisez le type de demande et les aides demandées.",
+      "questionsFile": "renouvellement/page2/questions_Module2.json",
+      "pdfMappingFile": "renouvellement/page2/pdf_fields_Module2.json",
+      "order": 2,
+      "progressMode": "questions"
+    },
+    {
+      "id": "page3",
+      "title": "Renouvellement / solidité médicale",
+      "description": "Vérifiez la solidité et la cohérence de vos documents médicaux.",
+      "questionsFile": "renouvellement/page3/questions_Module3.json",
+      "pdfMappingFile": "renouvellement/page3/pdf_fields_Module3.json",
+      "order": 3,
+      "progressMode": "questions"
+    },
+    {
+      "id": "page4",
+      "title": "Renouvellement / limitations fonctionnelles",
+      "description": "Quantifiez vos limitations pour aider l'analyse.",
+      "questionsFile": "renouvellement/page4/questions_Module4.json",
+      "pdfMappingFile": "renouvellement/page4/pdf_fields_Module4.json",
+      "order": 4,
+      "progressMode": "questions"
+    },
+    {
+      "id": "page5",
+      "title": "Renouvellement / impact professionnel",
+      "description": "Décrivez votre situation professionnelle et les aménagements éventuels.",
+      "questionsFile": "renouvellement/page5/questions_Module5.json",
+      "pdfMappingFile": "renouvellement/page5/pdf_fields_Module5.json",
+      "order": 5,
+      "progressMode": "questions"
+    },
+    {
+      "id": "page6",
+      "title": "Renouvellement / cohérence du dossier",
+      "description": "Vérifiez la cohérence entre vos documents.",
+      "questionsFile": "renouvellement/page6/questions_Module6.json",
+      "pdfMappingFile": "renouvellement/page6/pdf_fields_Module6.json",
+      "order": 6,
+      "progressMode": "questions"
+    },
+    {
+      "id": "page7",
+      "title": "Renouvellement / conclusion",
+      "description": "Soulignez le point le plus important.",
+      "questionsFile": "renouvellement/page7/questions_Module7.json",
+      "pdfMappingFile": "renouvellement/page7/pdf_fields_Module7.json",
+      "order": 7,
+      "progressMode": "questions"
+    },
+    {
+      "id": "coordonnees",
+      "title": "Coordonnées",
+      "description": "Vos coordonnées.",
+      "questionsFile": "final/coordonnees.json",
+      "order": 8
+    }
+  ]
+}

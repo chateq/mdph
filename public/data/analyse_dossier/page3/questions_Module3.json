@@ -1,6 +1,4 @@
 {
-  "title": "Recours amiable préalable obligatoire",
-  "description": "Préparez votre recours amiable préalable obligatoire (RAPO) étape par étape.",
   "sections": [
     {
       "id": "etape_identification",
@@ -254,7 +252,7 @@
           "id": "rapo_taches_aide",
           "title": "Pour quelles tâches ?",
           "description": "Cochez les tâches pour lesquelles vous avez besoin d'aide.",
-          "type": "checkbox",
+          "type": "checkbox_multiple",
           "obligatoire": true,
           "condition_affichage": "rapo_aide_quotidienne === 'souvent' || rapo_aide_quotidienne === 'toujours'",
           "options": [
@@ -380,7 +378,7 @@
           "id": "rapo_demande_recours",
           "title": "Que demandez-vous dans ce recours ?",
           "description": "Cochez les éléments demandés dans votre recours.",
-          "type": "checkbox",
+          "type": "checkbox_multiple",
           "obligatoire": true,
           "options": [
             { "value": "reevaluation_taux", "label": "Réévaluation du taux d'incapacité" },

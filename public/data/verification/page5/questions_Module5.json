@@ -1,0 +1,76 @@
+{
+  "sections": [
+    {
+      "title": "Impact professionnel",
+      "description": "",
+      "questions": [
+        {
+          "id": "verif_situation_pro",
+          "title": "Quelle est votre situation professionnelle actuelle ?",
+          "description": "Précisez votre statut professionnel actuel.",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "temps_plein", "label": "Temps plein" },
+            { "value": "temps_partiel", "label": "Temps partiel" },
+            { "value": "arret_maladie", "label": "Arrêt maladie" },
+            { "value": "invalidite", "label": "Invalidité" },
+            { "value": "chomage", "label": "Chômage" },
+            { "value": "sans_activite", "label": "Sans activité" }
+          ]
+        },
+        {
+          "id": "verif_travail_adapte",
+          "title": "Votre travail est-il adapté à votre état de santé ?",
+          "description": "Évaluez si votre emploi actuel tient compte de vos limitations.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "verif_situation_pro === 'temps_plein' || verif_situation_pro === 'temps_partiel'",
+          "options": [
+            { "value": "oui", "label": "Oui" },
+            { "value": "partiellement", "label": "Partiellement" },
+            { "value": "non", "label": "Non" }
+          ]
+        },
+        {
+          "id": "verif_amenagements",
+          "title": "Avez-vous des aménagements de poste ?",
+          "description": "Indiquez si des adaptations ont été mises en place.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "verif_situation_pro === 'temps_plein' || verif_situation_pro === 'temps_partiel'",
+          "options": [
+            { "value": "oui", "label": "Oui" },
+            { "value": "non", "label": "Non" }
+          ]
+        },
+        {
+          "id": "verif_type_amenagements",
+          "title": "Quels aménagements ?",
+          "description": "Cochez tous les aménagements dont vous bénéficiez.",
+          "type": "checkbox_multiple",
+          "obligatoire": true,
+          "condition_affichage": "(verif_situation_pro === 'temps_plein' || verif_situation_pro === 'temps_partiel') && verif_amenagements === 'oui'",
+          "options": [
+            { "value": "horaires_adaptes", "label": "Horaires adaptés" },
+            { "value": "teletravail", "label": "Télétravail" },
+            { "value": "taches_allegees", "label": "Tâches allégées" },
+            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez l'aménagement" }
+          ]
+        },
+        {
+          "id": "verif_difficultes_persistantes",
+          "title": "Malgré ces aménagements, rencontrez-vous encore des difficultés pour travailler ?",
+          "description": "Évaluez si les aménagements sont suffisants.",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "(verif_situation_pro === 'temps_plein' || verif_situation_pro === 'temps_partiel') && verif_amenagements === 'oui'",
+          "options": [
+            { "value": "oui", "label": "Oui" },
+            { "value": "non", "label": "Non" }
+          ]
+        }
+      ]
+    }
+  ]
+}

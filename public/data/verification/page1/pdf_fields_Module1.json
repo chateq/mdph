@@ -1,0 +1,10 @@
+{
+  "fields": [
+    { "name": "verif_dossier_prepare", "type": "text", "description": "État de préparation du dossier" },
+    { "name": "verif_upload_dossier", "type": "file", "description": "Fichiers uploadés" },
+    { "name": "verif_element_manquant", "type": "text", "description": "Élément manquant" },
+    { "name": "verif_element_manquant_text", "type": "text", "description": "Précision élément manquant" },
+    { "name": "verif_date_completion", "type": "text", "description": "Date de complétion" },
+    { "name": "verif_date_inconnue", "type": "text", "description": "Date inconnue" }
+  ]
+}
