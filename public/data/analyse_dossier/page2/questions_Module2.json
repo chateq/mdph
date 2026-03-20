@@ -354,16 +354,23 @@
           "id": "analyse_docs_pro",
           "title": "Avez-vous des documents liés à votre situation professionnelle ?",
           "description": "",
-          "type": "checkbox_multiple",
+          "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
           "options": [
-            { "value": "arret_maladie", "label": "arrêt maladie" },
-            { "value": "invalidite", "label": "invalidité" },
-            { "value": "inaptitude", "label": "reconnaissance d’inaptitude" },
-            { "value": "autre", "label": "autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" },
-            { "value": "aucun", "label": "aucun" }
+            { "value": "oui", "label": "Oui" },
+            { "value": "non", "label": "Non" }
           ]
+        },
+        {
+          "id": "analyse_upload_docs_pro",
+          "title": "Téléversez les documents liés à votre situation professionnelle",
+          "description": "",
+          "type": "file",
+          "obligatoire": true,
+          "condition_affichage": "analyse_docs_pro === 'oui'",
+          "multiple": true,
+          "accept": ".pdf,.jpg,.jpeg,.png"
         }
       ]
     }
