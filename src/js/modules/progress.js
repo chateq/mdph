@@ -43,7 +43,7 @@ export function updateProgress(idx, visible) {
 
   const currentStep = currentModule;
   const totalSteps = 4;
-  const partieText = `Partie ${currentStep} sur ${totalSteps} – ${currentPageTitle}`;
+  const partieText = `Partie ${currentStep} sur ${totalSteps}${currentPageTitle ? ` ${currentPageTitle}` : ''}`;
 
   $('progressText').textContent = partieText;
   $('progressFill').style.width = totalSteps ? `${Math.round((currentStep / totalSteps) * 100)}%` : '0%';

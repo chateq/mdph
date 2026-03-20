@@ -51,25 +51,31 @@ export function updateFormHeader(q) {
     if (descEl) descEl.textContent = 'Merci d\'avoir rempli le formulaire';
     return;
   }
-  
-  const pageTitle = q.pageTitle || q.sectionTitle || q.title || 'Formulaire';
-  
-  // Mettre à jour le titre si l'élément existe
-  if (titleEl) titleEl.textContent = pageTitle;
-  
-  // Mettre à jour la description si l'élément existe
-  if (descEl) {
-    let description = '';
-    
-    // Essayer de trouver la description dans form_pages.json
-    const page = formPagesData?.pages?.find(p => p.title === pageTitle);
-    description = page?.description || q.sectionDescription || q.description || '';
-    
-    descEl.textContent = description;
+ 
+  const page = formPagesData?.pages?.find(p => p.id === q.pageId);
+
+  const hasExplicitPageTitle = q && Object.prototype.hasOwnProperty.call(q, 'pageTitle');
+  const pageTitle = hasExplicitPageTitle ? (q.pageTitle ?? '') : (q.sectionTitle || q.title || 'Formulaire');
+  const hideTitle = hasExplicitPageTitle && pageTitle === '';
+
+  if (titleEl) {
+    titleEl.textContent = hideTitle ? '' : pageTitle;
+    titleEl.style.display = hideTitle ? 'none' : '';
   }
-  
-  // Mettre à jour le titre de l'onglet du navigateur
-  document.title = `${pageTitle} — CERFA MDPH`;
+
+  if (descEl) {
+    const hasExplicitPageDescription = page && Object.prototype.hasOwnProperty.call(page, 'description');
+    const pageDescription = hasExplicitPageDescription ? (page.description ?? '') : '';
+    const description = (hasExplicitPageDescription && pageDescription === '')
+      ? ''
+      : (pageDescription || q.sectionDescription || q.description || '');
+
+    const hideDescription = hasExplicitPageDescription && pageDescription === '';
+    descEl.textContent = description;
+    descEl.style.display = hideDescription ? 'none' : '';
+  }
+
+  document.title = `${pageTitle || 'CERFA MDPH'} — CERFA MDPH`;
 }
 
 // Charger les données des pages dès l'import du module

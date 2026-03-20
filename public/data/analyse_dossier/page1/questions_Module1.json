@@ -2,8 +2,8 @@
   "questions": [
     {
       "id": "recours_choix_action",
-      "title": "Que souhaitez-vous faire ?",
-      "description": "Choisissez l'action que vous souhaitez entreprendre.",
+      "title": "Quel type de recours souhaitez-vous faire ?",
+      "description": "",
       "type": "radio",
       "obligatoire": true,
       "options": [
@@ -14,7 +14,7 @@
     {
       "id": "recours_type",
       "title": "Quel type de recours souhaitez-vous faire ?",
-      "description": "Précisez le type de recours que vous souhaitez engager.",
+      "description": "",
       "type": "radio",
       "obligatoire": true,
       "condition_affichage": "recours_choix_action === 'recours'",

@@ -7,8 +7,8 @@
   "pages": [
     {
       "id": "Analyse-Recours",
-      "title": "Analyse et Recours",
-      "description": "Préparez votre Analyse et Recours MDPH étape par étape.",
+      "title": "",
+      "description": "",
       "questionsFile": "analyse_dossier/page1/questions_Module1.json",
       "pdfMappingFile": "analyse_dossier/page1/pdf_fields_Module1.json",
       "order": 1,
@@ -17,8 +17,8 @@
     },
     {
       "id": "analyse",
-      "title": "Analyse dossier MDPH",
-      "description": "Analysez votre dossier MDPH avant de prendre une décision",
+      "title": "",
+      "description": "",
       "questionsFile": "analyse_dossier/page2/questions_Module2.json",
       "pdfMappingFile": "analyse_dossier/page2/pdf_fields_Module2.json",
       "condition": "recours_choix_action === 'analyse'",
@@ -28,8 +28,8 @@
     },
     {
       "id": "rapo",
-      "title": "Formulaire RAPO",
-      "description": "Préparez votre Recours Administratif Préalable Obligatoire",
+      "title": "",
+      "description": "",
       "questionsFile": "analyse_dossier/page3/questions_Module3.json",
       "pdfMappingFile": "analyse_dossier/page3/pdf_fields_Module3.json",
       "condition": "recours_choix_action === 'recours' && recours_type === 'rapo'",
@@ -39,8 +39,8 @@
     },
     {
       "id": "recours-contentieux",
-      "title": "Recours contentieux",
-      "description": "Préparez votre recours contentieux étape par étape.",
+      "title": "",
+      "description": "",
       "questionsFile": "analyse_dossier/page4/questions_Module4.json",
       "pdfMappingFile": "analyse_dossier/page4/pdf_fields_Module4.json",
       "condition": "recours_choix_action === 'recours' && recours_type === 'contentieux'",
@@ -50,8 +50,8 @@
     },
     {
       "id": "coordonnees",
-      "title": "Vos coordonnées",
-      "description": "Renseignements relatifs à vos informations personnelles",
+      "title": "",
+      "description": "",
       "questionsFile": "final/coordonnees.json",
       "order": 5,
       "required": true,

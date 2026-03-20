@@ -1,13 +1,13 @@
 {
   "sections": [
     {
-      "id": "omprendre_decision",
-      "title": "comprendre la décision MDPH",
+      "id": "comprendre_decision",
+      "title": "",
       "questions": [
         {
           "id": "analyse_aide_refusee",
           "title": "Quelle aide MDPH a été refusée ?",
-          "description": "Sélectionnez l'aide qui a été refusée ou partiellement accordée.",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -17,13 +17,13 @@
             { "value": "rqth", "label": "Reconnaissance de la Qualité de Travailleur Handicapé (RQTH)" },
             { "value": "cmi", "label": "Carte Mobilité Inclusion (CMI)" },
             { "value": "orientation_pro", "label": "Orientation professionnelle" },
-            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez l'aide concernée" }
+            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez l’aide concernée" }
           ]
         },
         {
           "id": "analyse_type_demande",
           "title": "Cette demande était:",
-          "description": "Précisez la nature de votre demande initiale.",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -37,7 +37,7 @@
         {
           "id": "analyse_date_decision",
           "title": "Quelle est la date indiquée sur la décision MDPH ?",
-          "description": "Date de la décision :",
+          "description": "",
           "type": "date",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'"
@@ -45,7 +45,7 @@
         {
           "id": "analyse_decision_correspond_a",
           "title": "La décision correspond à :",
-          "description": "Précisez le type de décision prise par la MDPH.",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -59,7 +59,7 @@
         {
           "id": "analyse_motif_courrier",
           "title": "Quel motif est indiqué dans le courrier de décision ?",
-          "description": "Sélectionnez le motif de refus mentionné par la MDPH.",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -69,13 +69,13 @@
             { "value": "dossier_insuffisant", "label": "Dossier médical jugé insuffisant" },
             { "value": "non_stabilisee", "label": "Situation jugée non stabilisée" },
             { "value": "aucun_motif", "label": "Aucun motif clairement expliqué" },
-            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez le motif indiqué" }
+            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez le motif indiqué :" }
           ]
         },
         {
           "id": "analyse_phrase_courrier",
           "title": "Copiez la phrase du courrier qui explique le refus",
-          "description": "Phrase du courrier de la MDPH :",
+          "description": "",
           "type": "textarea",
           "placeholder": "Exemple : 'Après examen de votre demande d'Allocation Adulte Handicapé, la Commission départementale a décidé de ne pas vous attribuer cette prestation car votre taux d'incapacité est estimé à 78%'...",
           "obligatoire": true,
@@ -85,12 +85,12 @@
     },
     {
       "id": "situation_medicale",
-      "title": "Situation médicale",
+      "title": "",
       "questions": [
         {
           "id": "analyse_pathologie",
           "title": "Quelle est votre maladie ou votre handicap principal ?",
-          "description": "Décrivez votre pathologie :",
+          "description": "",
           "type": "textarea",
           "placeholder": "Exemple : Sclérose en plaques diagnostiquée en 2020. Fatigue chronique sévère, troubles de la marche avec risque de chutes, et difficultés de concentration...",
           "obligatoire": true,
@@ -99,7 +99,7 @@
         {
           "id": "analyse_duree_difficultes",
           "title": "Depuis combien de temps avez-vous ces difficultés ?",
-          "description": "Indiquez depuis quand votre état limite votre autonomie.",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -113,7 +113,7 @@
         {
           "id": "analyse_suivi_specialiste",
           "title": "Êtes-vous suivi par un médecin spécialiste ?",
-          "description": "Précisez si vous avez un suivi spécialisé.",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -125,8 +125,8 @@
         },
         {
           "id": "analyse_aggravation_recent",
-          "title": "Votre état de santé s'est-il aggravé récemment ?",
-          "description": "Indiquez si votre état a évolué récemment.",
+          "title": "Votre état de santé s’est-il aggravé récemment ?",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -138,8 +138,8 @@
         },
         {
           "id": "analyse_aggravation_depuis_quand",
-          "title": "Depuis quand votre état s'est-il aggravé ?",
-          "description": "Précisez la date ou la période de l'aggravation.",
+          "title": "Depuis quand votre état s’est-il aggravé ?",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse' && analyse_aggravation_recent === 'oui'",
@@ -154,12 +154,12 @@
     },
     {
       "id": "limitations",
-      "title": "Limitations dans la vie quotidienne",
+      "title": "",
       "questions": [
         {
           "id": "analyse_mobilite_limitee",
           "title": "Votre mobilité est-elle limitée ?",
-          "description": "Évaluez dans quelle mesure votre état limite vos déplacements.",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -174,7 +174,7 @@
         {
           "id": "analyse_aide_marche",
           "title": "Utilisez-vous une aide pour marcher ?",
-          "description": "Précisez si vous utilisez des aides techniques.",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse' && (analyse_mobilite_limitee === 'beaucoup' || analyse_mobilite_limitee === 'pas_seul')",
@@ -188,8 +188,8 @@
         },
         {
           "id": "analyse_besoin_aide_quotidien",
-          "title": "Avez-vous besoin d'aide dans votre vie quotidienne ?",
-          "description": "Évaluez votre besoin d'aide pour les activités quotidiennes.",
+          "title": "Avez-vous besoin d’aide dans votre vie quotidienne ?",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -203,8 +203,8 @@
         },
         {
           "id": "analyse_taches_aide",
-          "title": "Pour quelles tâches avez-vous besoin d'aide ?",
-          "description": "Cochez les tâches pour lesquelles vous avez besoin d'aide.",
+          "title": "Pour quelles tâches avez-vous besoin d’aide ?",
+          "description": "",
           "type": "checkbox_multiple",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse' && (analyse_besoin_aide_quotidien === 'souvent' || analyse_besoin_aide_quotidien === 'toujours')",
@@ -220,7 +220,7 @@
         {
           "id": "analyse_autonomie_globale",
           "title": "Globalement, votre état de santé limite votre autonomie :",
-          "description": "Évaluez l'impact global de votre état sur votre autonomie.",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -236,12 +236,12 @@
     },
     {
       "id": "situation_pro",
-      "title": "Situation professionnelle",
+      "title": "",
       "questions": [
         {
           "id": "analyse_situation_pro",
           "title": "Quelle est votre situation professionnelle actuelle ?",
-          "description": "Précisez votre situation actuelle sur le plan professionnel.",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -257,8 +257,8 @@
         },
         {
           "id": "analyse_heures_travail",
-          "title": "Combien d'heures travaillez-vous par semaine ?",
-          "description": "Indiquez votre volume de travail hebdomadaire.",
+          "title": "Combien d’heures travaillez-vous par semaine ?",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse' && (analyse_situation_pro === 'temps_plein' || analyse_situation_pro === 'temps_partiel')",
@@ -272,8 +272,8 @@
         },
         {
           "id": "analyse_limitation_capacite_travail",
-          "title": "Votre état de santé limite votre capacité à travailler :",
-          "description": "Évaluez l'impact de votre état sur votre capacité à travailler.",
+          "title": "Votre état de santé limite votre capacité à travailler:",
+          "description": ".",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -289,12 +289,12 @@
     },
     {
       "id": "realite_quotidienne",
-      "title": "Votre réalité quotidienne",
+      "title": "",
       "questions": [
         {
           "id": "analyse_plus_grande_difficulte",
-          "title": "Quelle est aujourd'hui la plus grande difficulté dans votre quotidien ?",
-          "description": "Décrivez la principale difficulté rencontrée.",
+          "title": "Quelle est aujourd’hui la plus grande difficulté dans votre quotidien ?",
+          "description": "",
           "type": "textarea",
           "placeholder": "Exemple : Je ne peux plus me lever seul le matin. Ma femme doit m'aider pour m'habiller et préparer mes médicaments. Les douleurs et la fatigue m'empêchent de conduire...",
           "obligatoire": true,
@@ -303,7 +303,7 @@
         {
           "id": "analyse_journee_typique",
           "title": "Décrivez une journée typique avec votre handicap",
-          "description": "Décrivez comment se déroule une journée habituelle.",
+          "description": "",
           "type": "textarea",
           "placeholder": "Exemple : Je me lève vers 9h avec beaucoup de difficulté. Ma femme prépare le petit-déjeuner. Je dois me reposer 1h après. L'après-midi, je peux faire une courte marche avec ma canne...",
           "obligatoire": true,
@@ -318,7 +318,7 @@
         {
           "id": "analyse_pourquoi_refus",
           "title": "Selon vous, pourquoi la MDPH a-t-elle refusé votre demande ?",
-          "description": "Donnez votre analyse sur les raisons du refus.",
+          "description": "",
           "type": "textarea",
           "placeholder": "Exemple : Je pense que la MDPH n'a pas pris en compte l'évolution récente de ma maladie. Mon dossier mentionnait principalement des examens de 2022, alors que ma situation s'est aggravée depuis...",
           "obligatoire": true,
@@ -326,8 +326,8 @@
         },
         {
           "id": "analyse_element_non_pris_compte",
-          "title": "Y a-t-il un élément important qui n'a pas été pris en compte dans votre dossier ?",
-          "description": "Mentionnez tout élément qui aurait été omis.",
+          "title": "Y a-t-il un élément important qui n’a pas été pris en compte dans votre dossier ?",
+          "description": "",
           "type": "textarea",
           "placeholder": "Exemple : Mon hospitalisation de 3 semaines en novembre 2023 n'apparaît pas dans le récapitulatif médical. Le rapport de mon kinésithérapeute décrivant mes difficultés de mobilité n'a pas été retenu...",
           "obligatoire": true,
@@ -342,7 +342,7 @@
         {
           "id": "analyse_doc_notification",
           "title": "Téléversez la notification de décision MDPH",
-          "description": "Joignez la notification de décision.",
+          "description": "",
           "type": "file",
           "obligatoire": true,
           "accept": ".pdf,.jpg,.jpeg,.png",
@@ -355,7 +355,7 @@
         {
           "id": "analyse_doc_certificat",
           "title": "Téléversez le certificat médical utilisé dans votre dossier",
-          "description": "Joignez le certificat médical.",
+          "description": "",
           "type": "file",
           "obligatoire": true,
           "accept": ".pdf,.jpg,.jpeg,.png",
@@ -368,7 +368,7 @@
         {
           "id": "analyse_autres_docs_medicaux",
           "title": "Avez-vous d’autres documents médicaux utiles ?",
-          "description": "Indiquez si vous disposez d'autres documents pertinents.",
+          "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
@@ -380,7 +380,7 @@
         {
           "id": "analyse_upload_autres_docs_medicaux",
           "title": "Upload multiple",
-          "description": "Joignez les documents médicaux supplémentaires.",
+          "description": "",
           "type": "file",
           "obligatoire": true,
           "multiple": true,
@@ -390,7 +390,7 @@
         {
           "id": "analyse_docs_pro",
           "title": "Avez-vous des documents liés à votre situation professionnelle ?",
-          "description": "Cochez les documents disponibles.",
+          "description": "",
           "type": "checkbox_multiple",
           "obligatoire": true,
           "condition_affichage": "recours_choix_action === 'analyse'",
