@@ -280,7 +280,7 @@
     },
     {
       "id": "ecart_decision",
-      "title": "Selon vous, pourquoi la MDPH a-t-elle refusé votre demande ?",
+      "title": "",
       "questions": [
         {
           "id": "analyse_pourquoi_refus",
@@ -297,7 +297,8 @@
           "description": "",
           "type": "textarea",
           "placeholder": "Exemple : Mon hospitalisation de 3 semaines en novembre 2023 n'apparaît pas dans le récapitulatif médical. Le rapport de mon kinésithérapeute décrivant mes difficultés de mobilité n'a pas été retenu...",
-          "obligatoire": true
+          "obligatoire": true,
+          "condition_affichage": "recours_choix_action === 'analyse'"
         }
       ]
     },
