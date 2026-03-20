@@ -11,9 +11,7 @@ export function updateProgress(idx, visible) {
   if (currentQuestion && currentQuestion.isEntryFlow) {
     const currentStep = currentQuestion.progressStep || idx + 1;
     const totalSteps = currentQuestion.progressTotal || 1;
-    const currentTitle = currentQuestion.pageTitle || currentQuestion.title || '';
-
-    $('progressText').textContent = `Étape ${currentStep} sur ${totalSteps} – ${currentTitle}`;
+    $('progressText').textContent = `Étape ${currentStep} sur ${totalSteps}`;
     $('progressFill').style.width = totalSteps ? `${Math.round((currentStep / totalSteps) * 100)}%` : '0%';
     $('questionId').textContent = '';
     $('prevBtn').disabled = idx <= 0;
