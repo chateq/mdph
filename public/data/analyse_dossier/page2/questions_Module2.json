@@ -132,18 +132,12 @@
           "condition_affichage": "recours_choix_action === 'analyse'",
           "options": [
             { "value": "non", "label": "Non" },
-            { "value": "oui", "label": "Oui", "followUp": {
-              "id": "analyse_aggravation_depuis_quand",
-              "title": "Depuis quand votre état s'est-il aggravé ?",
-              "type": "radio",
-              "obligatoire": true,
-              "options": [
-                { "value": "moins_6_mois", "label": "Moins de 6 mois" },
-                { "value": "6_12_mois", "label": "Entre 6 et 12 mois" },
-                { "value": "plus_1_an", "label": "Plus d'un an" },
-                { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
-              ]
-            }},
+            { "value": "oui", "label": "Oui", "subOptions": [
+              { "value": "moins_6_mois", "label": "Moins de 6 mois" },
+              { "value": "6_12_mois", "label": "Entre 6 et 12 mois" },
+              { "value": "plus_1_an", "label": "Plus d'un an" },
+              { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
+            ]},
             { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
           ]
         }
