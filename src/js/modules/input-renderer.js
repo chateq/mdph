@@ -262,9 +262,11 @@ export function renderInput(q, value) {
             if (opt.subOptions && Array.isArray(opt.subOptions) && opt.subOptions.length > 0) {
               const subOptionsFieldId = `${optValue}_suboptions`;
               const selectedSubOptions = Array.isArray(responses[subOptionsFieldId]) ? responses[subOptionsFieldId] : [];
+              const subTitle = opt.subOptionsTitle ? `<div class="sub-options-title">${opt.subOptionsTitle}</div>` : '';
               
               optionHtml += `
                 <div class="sub-options-container" id="suboptions_${optValue}" ${checked ? '' : 'hidden'}>
+                  ${subTitle}
                   <div class="sub-options-grid">
                     ${opt.subOptions.map(subOpt => {
                       const subChecked = selectedSubOptions.includes(subOpt.value) ? 'checked' : '';
@@ -344,9 +346,11 @@ export function renderInput(q, value) {
             if (opt.subOptions && Array.isArray(opt.subOptions) && opt.subOptions.length > 0) {
               const subOptionsFieldId = `${optValue}_suboptions`;
               const selectedSubOptions = Array.isArray(responses[subOptionsFieldId]) ? responses[subOptionsFieldId] : [];
+              const subTitle = (opt && opt.subOptionsTitle) ? `<div class="sub-options-title">${opt.subOptionsTitle}</div>` : '';
               
               radioHtml += `
                 <div class="sub-options-container" id="suboptions_${optValue}" style="${isChecked ? '' : 'display:none'}">
+                  ${subTitle}
                   <div class="sub-options-grid">
                     ${opt.subOptions.map(subOpt => {
                       const subChecked = selectedSubOptions.includes(subOpt.value) ? 'checked' : '';

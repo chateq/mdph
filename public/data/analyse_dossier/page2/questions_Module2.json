@@ -143,13 +143,13 @@
           "options": [
             { "value": "non", "label": "Non" },
             { "value": "un_peu", "label": "Un peu" },
-            { "value": "beaucoup", "label": "Beaucoup", "subOptions": [
+            { "value": "beaucoup", "label": "Beaucoup", "subOptionsTitle": "Utilisez-vous une aide pour marcher ?", "subOptions": [
               { "value": "canne", "label": "Canne" },
               { "value": "deambulateur", "label": "Déambulateur" },
               { "value": "fauteuil", "label": "Fauteuil roulant" },
               { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
             ]},
-            { "value": "pas_seul", "label": "Je ne peux pas me déplacer seul", "subOptions": [
+            { "value": "pas_seul", "label": "Je ne peux pas me déplacer seul", "subOptionsTitle": "Utilisez-vous une aide pour marcher ?", "subOptions": [
               { "value": "canne", "label": "Canne" },
               { "value": "deambulateur", "label": "Déambulateur" },
               { "value": "fauteuil", "label": "Fauteuil roulant" },
