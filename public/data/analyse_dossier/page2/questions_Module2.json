@@ -54,12 +54,12 @@
             { "value": "refus_partiel", "label": "Un refus partiel", "followUp": {
               "id": "analyse_ce_qui_accorde",
               "title": "Qu'est-ce qui a été accordé par la MDPH ?",
-              "type": "textarea",
-              "placeholder": "Décrivez ce qui a été accordé par la MDPH...",
+              "type": "text",
+              "placeholder": "Précisez ce qui a été accordé par la MDPH...",
               "obligatoire": true
             }},
             { "value": "incomprehensible", "label": "Je ne comprends pas la décision" },
-            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
+            { "value": "autre", "label": "Autre", "hasTextField": true, "textFieldPlaceholder": "Précisez votre suivi médical" }
           ]
         },
         {
