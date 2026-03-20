@@ -239,7 +239,7 @@
         },
         {
           "id": "analyse_limitation_capacite_travail",
-          "title": "Votre état de santé limite votre capacité à travailler:",
+          "title": "Votre état de santé limite votre capacité à travailler",
           "description": ".",
           "type": "radio",
           "obligatoire": true,
@@ -280,7 +280,7 @@
     },
     {
       "id": "ecart_decision",
-      "title": "Comprendre l’écart avec la décision",
+      "title": "Selon vous, pourquoi la MDPH a-t-elle refusé votre demande ?",
       "questions": [
         {
           "id": "analyse_pourquoi_refus",
