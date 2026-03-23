@@ -384,18 +384,6 @@
             { "value": "pas_d_autres_docs", "label": "Je n'ai pas d'autres documents" },
             { "value": "docs_medicaux_perdus", "label": "Mes documents sont perdus", "hasTextField": true, "textFieldPlaceholder": "Expliquez la situation" }
           ]
-        },
-        {
-          "id": "contentieux_upload_docs_admin",
-          "title": "Autres documents administratifs",
-          "description": "",
-          "type": "file",
-          "obligatoire": false,
-          "accept": ".pdf,.jpg,.jpeg,.png",
-          "missingOptions": [
-            { "value": "pas_de_docs_admin", "label": "Je n'ai pas de document administratif" },
-            { "value": "docs_admin_perdus", "label": "Mes documents sont perdus", "hasTextField": true, "textFieldPlaceholder": "Expliquez la situation" }
-          ]
         }
       ]
     }
