@@ -13,23 +13,14 @@
           "options": [
             { "value": "stable", "label": "stable" },
             { "value": "aggrave", "label": "aggravé" },
-            { "value": "ameliore", "label": "amélioré" }
-          ]
-        },
-        {
-          "id": "renouv_amelioration_domaines",
-          "title": "Dans quels domaines votre état s'est-il amélioré ?",
-          "description": "",
-          "type": "checkbox_multiple",
-          "obligatoire": true,
-          "condition_affichage": "renouv_evolution_etat === 'ameliore'",
-          "options": [
-            { "value": "mobilite", "label": "mobilité" },
-            { "value": "fatigue", "label": "fatigue" },
-            { "value": "douleurs", "label": "douleurs" },
-            { "value": "concentration", "label": "concentration" },
-            { "value": "capacite_travail", "label": "capacité de travail" },
-            { "value": "autre", "label": "autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
+            { "value": "ameliore", "label": "amélioré", "subOptionsTitle": "Dans quels domaines votre état s'est-il amélioré ?", "subOptions": [
+              { "value": "mobilite", "label": "mobilité" },
+              { "value": "fatigue", "label": "fatigue" },
+              { "value": "douleurs", "label": "douleurs" },
+              { "value": "concentration", "label": "concentration" },
+              { "value": "capacite_travail", "label": "capacité de travail" },
+              { "value": "autre", "label": "autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
+            ] }
           ]
         },
         {
