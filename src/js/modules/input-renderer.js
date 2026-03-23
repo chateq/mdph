@@ -269,6 +269,19 @@ export function renderInput(q, value) {
                   ${subTitle}
                   <div class="sub-options-grid">
                     ${opt.subOptions.map(subOpt => {
+                      const subType = subOpt && subOpt.type ? String(subOpt.type) : 'checkbox';
+                      if (subType === 'date' || subType === 'text') {
+                        const subFieldId = subOpt.fieldId || `${q.id}__${optValue}__${subOpt.value || 'field'}`;
+                        const subVal = responses[subFieldId] || '';
+                        const inputType = subType === 'date' ? 'date' : 'text';
+                        return `
+                          <label class="sub-choice">
+                            <span>${subOpt.label || ''}</span>
+                            <input class="input" type="${inputType}" value="${String(subVal)}" data-subfield="${subFieldId}" />
+                          </label>
+                        `;
+                      }
+
                       const subChecked = selectedSubOptions.includes(subOpt.value) ? 'checked' : '';
                       return `
                         <label class="sub-choice">
@@ -353,6 +366,19 @@ export function renderInput(q, value) {
                   ${subTitle}
                   <div class="sub-options-grid">
                     ${opt.subOptions.map(subOpt => {
+                      const subType = subOpt && subOpt.type ? String(subOpt.type) : 'checkbox';
+                      if (subType === 'date' || subType === 'text') {
+                        const subFieldId = subOpt.fieldId || `${q.id}__${optValue}__${subOpt.value || 'field'}`;
+                        const subVal = responses[subFieldId] || '';
+                        const inputType = subType === 'date' ? 'date' : 'text';
+                        return `
+                          <label class="sub-choice">
+                            <span>${subOpt.label || ''}</span>
+                            <input class="input" type="${inputType}" value="${String(subVal)}" data-subfield="${subFieldId}" />
+                          </label>
+                        `;
+                      }
+
                       const subChecked = selectedSubOptions.includes(subOpt.value) ? 'checked' : '';
                       return `
                         <label class="sub-choice">

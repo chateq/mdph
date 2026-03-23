@@ -115,18 +115,12 @@
           "type": "radio",
           "obligatoire": true,
           "options": [
-            { "value": "oui", "label": "Oui" },
+            { "value": "oui", "label": "Oui", "subOptionsTitle": "Date d’envoi du RAPO", "subOptions": [
+              { "value": "date_envoi", "type": "date", "label": "", "fieldId": "contentieux_rapo_date_envoi" }
+            ]},
             { "value": "non", "label": "Non" },
             { "value": "ne_sais_pas", "label": "Je ne sais pas", "description": "Précisez si vous n'êtes pas sûr." }
           ]
-        },
-        {
-          "id": "contentieux_rapo_date_envoi",
-          "title": "Date d’envoi du RAPO",
-          "description": "",
-          "type": "date",
-          "obligatoire": true,
-          "condition_affichage": "contentieux_rapo_envoye === 'oui'"
         },
         {
           "id": "contentieux_rapo_reponse",

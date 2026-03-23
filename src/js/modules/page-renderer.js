@@ -597,6 +597,13 @@ export function renderNormalPage(q, idx, visible, nextCallback, prevCallback) {
             container.querySelectorAll('input[name="sub_check"]').forEach(cb => cb.checked = false);
             const subField = container.querySelector('input[data-suboptions-field]')?.getAttribute('data-suboptions-field');
             if (subField && responses[subField]) delete responses[subField];
+
+            // Nettoyer aussi les sous-champs (ex: date/text) rendus via data-subfield
+            container.querySelectorAll('input[data-subfield]').forEach(inp => {
+              const fid = inp.getAttribute('data-subfield');
+              if (fid && responses[fid] !== undefined) delete responses[fid];
+              inp.value = '';
+            });
           }
         });
         saveLocal(true);
@@ -619,6 +626,20 @@ export function renderNormalPage(q, idx, visible, nextCallback, prevCallback) {
           if (!values.length) delete responses[subField];
           saveLocal(true);
         });
+      });
+
+      // Sous-champs (date/text) dans les subOptions
+      questionDiv.querySelectorAll('.sub-options-container input[data-subfield]').forEach(input => {
+        const handler = (e) => {
+          const fid = e.target.getAttribute('data-subfield');
+          if (!fid) return;
+          const val = String(e.target.value || '');
+          if (val) responses[fid] = val;
+          else delete responses[fid];
+          saveLocal(true);
+        };
+        input.addEventListener('input', handler);
+        input.addEventListener('change', handler);
       });
       syncRadioTextFields();
     }
