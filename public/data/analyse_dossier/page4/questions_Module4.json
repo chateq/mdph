@@ -130,18 +130,12 @@
           "obligatoire": true,
           "condition_affichage": "contentieux_rapo_envoye === 'oui'",
           "options": [
-            { "value": "oui", "label": "Oui" },
+            { "value": "oui", "label": "Oui", "subOptionsTitle": "Date de la réponse de la MDPH", "subOptions": [
+              { "value": "date_reponse", "type": "date", "label": "", "fieldId": "contentieux_rapo_date_reponse" }
+            ]},
             { "value": "non", "label": "Non" },
             { "value": "ne_sais_pas", "label": "Je ne sais pas" }
           ]
-        },
-        {
-          "id": "contentieux_rapo_date_reponse",
-          "title": "Date de la réponse de la MDPH",
-          "description": "",
-          "type": "date",
-          "obligatoire": true,
-          "condition_affichage": "contentieux_rapo_envoye === 'oui' && contentieux_rapo_reponse === 'oui'"
         },
         {
           "id": "contentieux_rapo_resultat",
