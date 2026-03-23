@@ -232,7 +232,7 @@
           "options": [
             { "value": "non", "label": "Non" },
             { "value": "parfois", "label": "parfois" },
-            { "value": "souvent", "label": "souvent", "subOptions": [
+            { "value": "souvent", "label": "souvent", "subOptionsTitle": "Pour quelles tâches avez-vous besoin d’aide ?", "subOptions": [
               { "value": "courses", "label": "Faire les courses" },
               { "value": "repas", "label": "Préparer les repas" },
               { "value": "menage", "label": "Faire le ménage" },
@@ -240,7 +240,7 @@
               { "value": "administratif", "label": "Gérer les démarches administratives" },
               { "value": "autre", "label": "Autre" }
             ] },
-            { "value": "toujours", "label": "toujours", "subOptions": [
+            { "value": "toujours", "label": "toujours", "subOptionsTitle": "Pour quelles tâches avez-vous besoin d’aide ?", "subOptions": [
               { "value": "courses", "label": "Faire les courses" },
               { "value": "repas", "label": "Préparer les repas" },
               { "value": "menage", "label": "Faire le ménage" },
