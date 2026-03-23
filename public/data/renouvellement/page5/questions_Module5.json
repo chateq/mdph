@@ -8,7 +8,7 @@
           "id": "renouv_marcher_200m",
           "title": "Dans quelle mesure votre état de santé vous limite-t-il pour marcher environ 200 mètres ?",
           "description": "",
-          "type": "radio",
+          "type": "checkbox_multiple",
           "obligatoire": true,
           "options": [
             { "value": "0", "label": "0 — aucune difficulté" },
@@ -21,14 +21,14 @@
               { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
             ]},
             { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
+            { "value": "precisez", "label": "Précisez les aides dont vous avez besoin (personne ou matériel) et à quelle fréquence.", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
           ]
         },
         {
           "id": "renouv_debout_10min",
           "title": "Dans quelle mesure votre état de santé vous limite-t-il pour rester debout plus de 10 minutes ?",
           "description": "",
-          "type": "radio",
+          "type": "checkbox_multiple",
           "obligatoire": true,
           "options": [
             { "value": "0", "label": "0 — aucune difficulté" },
@@ -41,14 +41,14 @@
               { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
             ]},
             { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
+            { "value": "precisez", "label": "Décrivez le temps supporté, les difficultés et si vous avez besoin d’aide ou de matériel.", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
           ]
         },
         {
           "id": "renouv_escalier",
           "title": "Dans quelle mesure votre état de santé vous limite-t-il pour monter ou descendre un escalier ?",
           "description": "",
-          "type": "radio",
+          "type": "checkbox_multiple",
           "obligatoire": true,
           "options": [
             { "value": "0", "label": "0 — aucune difficulté" },
@@ -61,14 +61,14 @@
               { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
             ]},
             { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
+            { "value": "precisez", "label": "Décrivez les difficultés, l’aide ou le matériel nécessaire.", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
           ]
         },
         {
           "id": "renouv_deplacer_exterieur",
           "title": "Dans quelle mesure votre état de santé vous limite-t-il pour vous déplacer seul à l'extérieur ?",
           "description": "",
-          "type": "radio",
+          "type": "checkbox_multiple",
           "obligatoire": true,
           "options": [
             { "value": "0", "label": "0 — aucune difficulté" },
@@ -81,14 +81,14 @@
               { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
             ]},
             { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
+            { "value": "precisez", "label": "Décrivez les difficultés, l’aide ou le matériel utilisé.", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
           ]
         },
         {
           "id": "renouv_transports",
           "title": "Dans quelle mesure votre état de santé vous limite-t-il pour utiliser les transports ?",
           "description": "",
-          "type": "radio",
+          "type": "checkbox_multiple",
           "obligatoire": true,
           "options": [
             { "value": "0", "label": "0 — aucune difficulté" },
@@ -101,7 +101,7 @@
               { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
             ]},
             { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
+            { "value": "precisez", "label": "Dans quelle mesure votre état de santé vous limite-t-il pour utiliser les transports (monter, descendre, attendre, vous orienter) ?", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
           ]
         },
         {
