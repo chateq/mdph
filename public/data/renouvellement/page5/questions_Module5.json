@@ -219,7 +219,14 @@
             { "value": "0", "label": "0 — aucune difficulté" },
             { "value": "1", "label": "1 — difficulté légère" },
             { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante" },
+            { "value": "3", "label": "3 — difficulté importante", "subOptionsTitle": "Après un effort, combien de temps vous faut-il pour récupérer ?", "subOptions": [
+              { "value": "quelques_heures", "label": "quelques heures" },
+              { "value": "une_journee", "label": "une journée" },
+              { "value": "plusieurs_jours", "label": "plusieurs jours" },
+              { "value": "tous_les_jours", "label": "tous les jours" },
+              { "value": "situations_complexes", "label": "lors de situations complexes" },
+              { "value": "periodes_fatigue", "label": "lors de périodes de fatigue importante" }
+            ] },
             { "value": "4", "label": "4 — impossible à réaliser seul" },
             { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
           ]
@@ -280,25 +287,16 @@
           "type": "radio",
           "obligatoire": true,
           "options": [
-            { "value": "oui", "label": "oui" },
+            { "value": "oui", "label": "oui", "subOptionsTitle": "Quels effets secondaires ressentez-vous ?", "subOptions": [
+              { "value": "fatigue", "label": "fatigue" },
+              { "value": "douleurs", "label": "douleurs" },
+              { "value": "troubles_concentration", "label": "troubles de concentration" },
+              { "value": "autre", "label": "autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
+            ] },
             { "value": "non", "label": "non" }
           ]
         },
-        {
-          "id": "renouv_effets_secondaires_liste",
-          "title": "Quels effets secondaires ressentez-vous ?",
-          "description": "",
-          "type": "checkbox_multiple",
-          "obligatoire": true,
-          "condition_affichage": "renouv_effets_secondaires_traitements === 'oui'",
-          "options": [
-            { "value": "fatigue", "label": "fatigue" },
-            { "value": "douleurs", "label": "douleurs" },
-            { "value": "troubles_concentration", "label": "troubles de concentration" },
-            { "value": "autre", "label": "autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
-          ]
-        },
-        {
+                {
           "id": "renouv_concentrer_tache",
           "title": "Dans quelle mesure votre état de santé vous limite-t-il pour vous concentrer sur une tâche ?",
           "description": "",
