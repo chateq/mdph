@@ -194,28 +194,19 @@
         },
         {
           "id": "renouv_aide_autonomie",
-          "title": "Recevez-vous de l'aide pour réaliser cette activité ?",
+          "title": "Recevez-vous de l'aide pour réaliser ces activités ?",
           "description": "",
           "type": "radio",
           "obligatoire": true,
           "condition_affichage": "renouv_laver_douche === '3' || renouv_laver_douche === '4' || renouv_habiller_seul === '3' || renouv_habiller_seul === '4' || renouv_preparer_repas === '3' || renouv_preparer_repas === '4' || renouv_faire_courses === '3' || renouv_faire_courses === '4' || renouv_entretenir_logement === '3' || renouv_entretenir_logement === '4'",
           "options": [
-            { "value": "oui", "label": "oui" },
+            { "value": "oui", "label": "oui", "subOptionsTitle": "Qui vous apporte cette aide ?", "subOptions": [
+              { "value": "conjoint_partenaire", "label": "conjoint ou partenaire" },
+              { "value": "membre_famille", "label": "membre de la famille" },
+              { "value": "aide_professionnelle", "label": "aide professionnelle" },
+              { "value": "autre", "label": "autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
+            ] },
             { "value": "non", "label": "non" }
-          ]
-        },
-        {
-          "id": "renouv_qui_aide_autonomie",
-          "title": "Qui vous apporte cette aide ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "condition_affichage": "(renouv_laver_douche === '3' || renouv_laver_douche === '4' || renouv_habiller_seul === '3' || renouv_habiller_seul === '4' || renouv_preparer_repas === '3' || renouv_preparer_repas === '4' || renouv_faire_courses === '3' || renouv_faire_courses === '4' || renouv_entretenir_logement === '3' || renouv_entretenir_logement === '4') && renouv_aide_autonomie === 'oui'",
-          "options": [
-            { "value": "conjoint_partenaire", "label": "conjoint ou partenaire" },
-            { "value": "membre_famille", "label": "membre de la famille" },
-            { "value": "aide_professionnelle", "label": "aide professionnelle" },
-            { "value": "autre", "label": "autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
           ]
         },
         {
