@@ -708,6 +708,25 @@ export function renderNormalPage(q, idx, visible, nextCallback, prevCallback) {
             }
           });
         };
+
+        // Synchroniser l'affichage des followUps inline (subtab) attachés aux missingOptions
+        const syncMissingFollowUps = () => {
+          try {
+            const checked = questionDiv.querySelector(`input[name="${q.id}_missing"]:checked`);
+            const selected = checked ? String(checked.value || '') : '';
+            questionDiv.querySelectorAll('.missing-followup[data-missing-followup-for]').forEach(el => {
+              const key = el.getAttribute('data-missing-followup-for');
+              const shouldShow = !!(selected && key === selected);
+              el.style.display = shouldShow ? 'block' : 'none';
+              if (!shouldShow) {
+                el.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+                const fid = el.querySelector('input[type="radio"]')?.getAttribute('name');
+                if (fid && responses[fid] !== undefined) delete responses[fid];
+              }
+            });
+          } catch {
+          }
+        };
         
         // Gérer le changement de radio missingOptions
         missingRadios.forEach(radio => {
@@ -720,12 +739,15 @@ export function renderNormalPage(q, idx, visible, nextCallback, prevCallback) {
             // Sauvegarder la réponse
             if (radio.checked) {
               responses[q.id] = radio.value;
+              responses[`${q.id}_missing`] = radio.value;
             } else {
               delete responses[q.id];
+              delete responses[`${q.id}_missing`];
             }
             
             // Synchroniser les champs texte
             syncMissingTextFields();
+            syncMissingFollowUps();
             saveLocal(true);
           });
         });
@@ -742,9 +764,23 @@ export function renderNormalPage(q, idx, visible, nextCallback, prevCallback) {
             // Sauvegarder les fichiers
             const files = Array.from(e.target.files);
             responses[q.id] = files.length > 0 ? files : undefined;
+            delete responses[`${q.id}_missing`];
+
+            // Masquer/vider les followUps inline
+            syncMissingFollowUps();
             saveLocal(true);
           });
         }
+
+        // Sauvegarde live des followUps inline (radio)
+        questionDiv.querySelectorAll('.missing-followup input[type="radio"]').forEach(r => {
+          r.addEventListener('change', (e) => {
+            const fid = e.target.getAttribute('name');
+            if (!fid) return;
+            responses[fid] = String(e.target.value || '');
+            saveLocal(true);
+          });
+        });
         
         // Gérer les champs texte des missingOptions
         questionDiv.querySelectorAll('.text-field-missing input[data-field]').forEach(input => {
@@ -757,6 +793,7 @@ export function renderNormalPage(q, idx, visible, nextCallback, prevCallback) {
         
         // Initialiser l'état
         syncMissingTextFields();
+        syncMissingFollowUps();
       }
     }
   }
@@ -1055,6 +1092,81 @@ export function renderMultiQuestionPage(questions, idx, visible, nextCallback, p
           saveLocal(true);
         });
       }
+    }
+
+    // Gestion des missingOptions pour les inputs file (incluant followUp inline)
+    if (q.type === 'file' && q.missingOptions) {
+      const missingRadios = questionDiv.querySelectorAll('input[name="' + q.id + '_missing"]');
+      const fileInput = questionDiv.querySelector('#answer');
+
+      const syncMissingTextFields = () => {
+        missingRadios.forEach(radio => {
+          const textFieldDiv = document.getElementById(`text_${radio.value}`);
+          if (textFieldDiv) textFieldDiv.style.display = radio.checked ? 'block' : 'none';
+        });
+      };
+
+      const syncMissingFollowUps = () => {
+        try {
+          const checked = questionDiv.querySelector(`input[name="${q.id}_missing"]:checked`);
+          const selected = checked ? String(checked.value || '') : '';
+          questionDiv.querySelectorAll('.missing-followup[data-missing-followup-for]').forEach(el => {
+            const key = el.getAttribute('data-missing-followup-for');
+            const shouldShow = !!(selected && key === selected);
+            el.style.display = shouldShow ? 'block' : 'none';
+            if (!shouldShow) {
+              el.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+              const fid = el.querySelector('input[type="radio"]')?.getAttribute('name');
+              if (fid && responses[fid] !== undefined) delete responses[fid];
+            }
+          });
+        } catch {
+        }
+      };
+
+      missingRadios.forEach(radio => {
+        radio.addEventListener('change', () => {
+          if (fileInput) fileInput.disabled = missingRadios.some(r => r.checked);
+
+          if (radio.checked) {
+            responses[q.id] = radio.value;
+            responses[`${q.id}_missing`] = radio.value;
+          } else {
+            delete responses[q.id];
+            delete responses[`${q.id}_missing`];
+          }
+
+          syncMissingTextFields();
+          syncMissingFollowUps();
+          saveLocal(true);
+        });
+      });
+
+      if (fileInput) {
+        fileInput.addEventListener('change', (e) => {
+          missingRadios.forEach(r => (r.checked = false));
+          syncMissingTextFields();
+
+          const files = Array.from(e.target.files);
+          responses[q.id] = files.length > 0 ? files : undefined;
+          delete responses[`${q.id}_missing`];
+
+          syncMissingFollowUps();
+          saveLocal(true);
+        });
+      }
+
+      questionDiv.querySelectorAll('.missing-followup input[type="radio"]').forEach(r => {
+        r.addEventListener('change', (e) => {
+          const fid = e.target.getAttribute('name');
+          if (!fid) return;
+          responses[fid] = String(e.target.value || '');
+          saveLocal(true);
+        });
+      });
+
+      syncMissingTextFields();
+      syncMissingFollowUps();
     }
   });
 

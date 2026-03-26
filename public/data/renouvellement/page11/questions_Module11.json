@@ -100,15 +100,7 @@
           ]
         },
         {
-          "id": "renouv_explication_projet_vie",
-          "title": "Le projet de vie est un document où vous décrivez vos aspirations, vos besoins et comment vous souhaitez organiser votre vie au quotidien pour surmonter les difficultés liées à votre état de santé.",
-          "description": "",
-          "type": "info",
-          "obligatoire": false,
-          "condition_affichage": "renouv_projet_vie_missing === 'pas_sais_pas'"
-        },
-        {
-          "id": "renouv_documents_cohérence",
+          "id": "renouv_documents_coherence",
           "title": "Les documents envoyés décrivent-ils correctement votre situation actuelle ?",
           "description": "",
           "type": "radio",
@@ -125,7 +117,7 @@
           "description": "",
           "type": "text",
           "obligatoire": true,
-          "condition_affichage": "renouv_documents_cohérence === 'partiellement' || renouv_documents_cohérence === 'non'",
+          "condition_affichage": "renouv_documents_coherence === 'partiellement' || renouv_documents_coherence === 'non'",
           "placeholder": "Précisez ce qui devrait être ajouté ou modifié"
         }
       ]

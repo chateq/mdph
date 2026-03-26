@@ -24,6 +24,14 @@ export function renderInput(q, value) {
     return `${base} (précisez)`;
   };
   
+  if (type === 'info') {
+    return `
+      <div class="field-container info-message">
+        ${q.question ? `<div class="question-title">${q.question}</div>` : ''}
+        ${description}
+      </div>`;
+  }
+
   if (type === 'file') {
     const isMultiple = q.multiple === true;
     const acceptAttr = q.accept ? `accept="${q.accept}"` : '';
@@ -41,6 +49,7 @@ export function renderInput(q, value) {
             const hasTextField = opt.hasTextField || false;
             const textFieldId = `${optValue}_text`;
             const textFieldValue = responses[textFieldId] || '';
+            const followUp = opt && typeof opt === 'object' ? opt.followUp : null;
             
             let optionHtml = `
               <label class="choice missing-option">
@@ -58,6 +67,26 @@ export function renderInput(q, value) {
                          value="${textFieldValue}" 
                          data-field="${textFieldId}"
                          class="input" />
+                </div>`;
+            }
+
+            // Follow-up inline (subtab) sur la missing option
+            if (followUp && followUp.type === 'radio' && Array.isArray(followUp.options) && followUp.id) {
+              const saved = String(responses[followUp.id] ?? '');
+              optionHtml += `
+                <div class="missing-followup" data-missing-followup-for="${optValue}" style="display:none;">
+                  <div class="field-container">
+                    <div class="question-title">${followUp.title || ''}</div>
+                    ${followUp.description ? `<div class="field-description">${followUp.description}</div>` : ''}
+                    <div class="choice-grid">
+                      ${followUp.options.map(o => `
+                        <label class="choice">
+                          <input type="radio" name="${followUp.id}" value="${o.value}" ${saved === String(o.value) ? 'checked' : ''} />
+                          <span>${o.label}</span>
+                        </label>
+                      `).join('')}
+                    </div>
+                  </div>
                 </div>`;
             }
             

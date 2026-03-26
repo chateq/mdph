@@ -29,6 +29,11 @@ export function getAnswerFromDom(q) {
     if (q.missingOptions && Array.isArray(q.missingOptions)) {
       const missingRadio = scope.querySelector(`input[name="${q.id}_missing"]:checked`);
       if (missingRadio) {
+        // Exposer aussi <id>_missing pour les condition_affichage
+        try {
+          responses[`${q.id}_missing`] = String(missingRadio.value);
+        } catch {
+        }
         return missingRadio.value; // Retourner la valeur de la missing option cochée
       }
     }
