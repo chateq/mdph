@@ -101,12 +101,22 @@
       "progressMode": "questions"
     },
     {
+      "id": "page11a",
+      "title": "",
+      "description": "",
+      "questionsFile": "renouvellement/page11a/questions_Module11a.json",
+      "pdfMappingFile": "renouvellement/page11a/pdf_fields_Module11a.json",
+      "order": 12,
+      "condition": "renouv_projet_vie_missing === 'pas_sais_pas'",
+      "progressMode": "questions"
+    },
+    {
       "id": "page12",
       "title": "",
       "description": "",
       "questionsFile": "renouvellement/page12/questions_Module12.json",
       "pdfMappingFile": "renouvellement/page12/pdf_fields_Module12.json",
-      "order": 12,
+      "order": 13,
       "progressMode": "questions"
     },
     {
@@ -114,7 +124,7 @@
       "title": "",
       "description": "",
       "questionsFile": "final/coordonnees.json",
-      "order": 13
+      "order": 14
     }
   ]
 }

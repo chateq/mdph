@@ -1,0 +1,20 @@
+{
+  "sections": [
+    {
+      "title": "",
+      "description": "",
+      "questions": [
+        {
+          "id": "renouv_explication_projet_vie",
+          "title": "Qu'est-ce que le projet de vie ?",
+          "description": "Le projet de vie est le document qui influence directement la décision de la MDPH. C'est à partir de ce texte que la commission comprend votre situation et évalue vos droits.\n\nLes certificats médicaux ne montrent pas votre quotidien : si votre projet de vie est mal rédigé, incomplet ou imprécis, votre situation peut être mal comprise, et vos droits refusés ou réduits.\n\nUn projet de vie clair, structuré et concret est indispensable pour défendre votre dossier.",
+          "type": "info",
+          "isIntroduction": true,
+          "hasCheckbox": true,
+          "obligatoire": true,
+          "condition_affichage": "renouv_projet_vie_missing === 'pas_sais_pas'"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "fields": [
+    { "name": "renouv_explication_projet_vie", "type": "radio", "description": "Explication projet de vie" }
+  ]
+}
