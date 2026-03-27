@@ -8,7 +8,7 @@
           "id": "renouv_marcher_200m",
           "title": "Dans quelle mesure votre état de santé vous limite-t-il pour marcher environ 200 mètres ?",
           "description": "",
-          "type": "checkbox_multiple",
+          "type": "radio",
           "obligatoire": true,
           "options": [
             { "value": "0", "label": "0 — aucune difficulté" },
@@ -28,7 +28,7 @@
           "id": "renouv_debout_10min",
           "title": "Dans quelle mesure votre état de santé vous limite-t-il pour rester debout plus de 10 minutes ?",
           "description": "",
-          "type": "checkbox_multiple",
+          "type": "radio",
           "obligatoire": true,
           "options": [
             { "value": "0", "label": "0 — aucune difficulté" },
@@ -48,7 +48,7 @@
           "id": "renouv_escalier",
           "title": "Dans quelle mesure votre état de santé vous limite-t-il pour monter ou descendre un escalier ?",
           "description": "",
-          "type": "checkbox_multiple",
+          "type": "radio",
           "obligatoire": true,
           "options": [
             { "value": "0", "label": "0 — aucune difficulté" },
@@ -68,7 +68,7 @@
           "id": "renouv_deplacer_exterieur",
           "title": "Dans quelle mesure votre état de santé vous limite-t-il pour vous déplacer seul à l'extérieur ?",
           "description": "",
-          "type": "checkbox_multiple",
+          "type": "radio",
           "obligatoire": true,
           "options": [
             { "value": "0", "label": "0 — aucune difficulté" },
@@ -88,7 +88,7 @@
           "id": "renouv_transports",
           "title": "Dans quelle mesure votre état de santé vous limite-t-il pour utiliser les transports ?",
           "description": "",
-          "type": "checkbox_multiple",
+          "type": "radio",
           "obligatoire": true,
           "options": [
             { "value": "0", "label": "0 — aucune difficulté" },
