@@ -372,9 +372,10 @@ export function renderInput(q, value) {
             let radioHtml = `
               <div class="radio-option-container" data-value="${optValue}">
                 <label class="choice">
-                  <input type="radio" name="${q.id}" value="${optValue}" ${checked} 
-                         data-has-text="${hasTextField ? 'true' : 'false'}" 
-                         data-has-suboptions="${opt.subOptions && opt.subOptions.length > 0 ? 'true' : 'false'}" />
+                  <input type="radio" name="${q.id}" value="${optValue}" ${checked}
+                         data-has-text="${hasTextField ? 'true' : 'false'}"
+                         data-has-suboptions="${opt.subOptions && opt.subOptions.length > 0 ? 'true' : 'false'}"
+                         data-has-followup="${opt.followUp && opt.followUp.id ? 'true' : 'false'}" />
                   <span>${finalLabel}</span>
                 </label>`;
             
@@ -418,6 +419,29 @@ export function renderInput(q, value) {
                       `;
                     }).join('')}
                   </div>
+                </div>`;
+            }
+            
+            // Follow-up inline (subtab) sur l'option radio - même style que subOptions checkbox
+            if (opt.followUp && opt.followUp.id) {
+              const followUpId = opt.followUp.id;
+              const savedFollowUp = String(responses[followUpId] ?? '');
+              const hasFollowUpOptions = opt.followUp.type === 'radio' && Array.isArray(opt.followUp.options);
+              const followUpTitle = opt.followUp.title ? `<div class="sub-options-title">${opt.followUp.title}</div>` : '';
+              
+              radioHtml += `
+                <div class="sub-options-container" data-followup-for="${optValue}" style="${isChecked ? '' : 'display:none'}">
+                  ${followUpTitle}
+                  ${opt.followUp.description ? `<div class="field-description">${opt.followUp.description}</div>` : ''}
+                  ${hasFollowUpOptions ? `
+                  <div class="sub-options-grid">
+                    ${opt.followUp.options.map(o => `
+                      <label class="sub-choice">
+                        <input type="radio" name="${followUpId}" value="${o.value}" ${savedFollowUp === String(o.value) ? 'checked' : ''} />
+                        <span>${o.label}</span>
+                      </label>
+                    `).join('')}
+                  </div>` : ''}
                 </div>`;
             }
             

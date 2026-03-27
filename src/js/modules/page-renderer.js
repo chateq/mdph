@@ -106,7 +106,7 @@ export function renderIntroductionPage(q, idx, render, visible, nextCallback) {
   
   const checkboxId = `intro_checkbox_${q.id}`;
   const savedCheckboxValue = responses[checkboxId] === true;
-  const requiresCheckbox = q.requireCheckbox === true;
+  const requiresCheckbox = q.obligatoire === true;
   const shouldDisableCheckbox = q.hasCheckbox && requiresCheckbox && !savedCheckboxValue;
 
   const shouldShowTitle = q.hideTitle !== true;
@@ -123,7 +123,10 @@ export function renderIntroductionPage(q, idx, render, visible, nextCallback) {
 
   const shouldDisableRadio = (q.type === 'radio' && q.obligatoire === true && !selectedRadioValue)
     || (followUp && followUp.obligatoire === true && !followUpValue);
-  const shouldDisableStart = shouldDisableCheckbox || shouldDisableRadio;
+  // Pour type 'info' avec hasCheckbox, on ne bloque pas sur la sélection radio
+  const shouldDisableStart = (q.type === 'info' && q.hasCheckbox)
+    ? shouldDisableCheckbox
+    : (shouldDisableCheckbox || shouldDisableRadio);
 
   let radioOptions = '';
   if (q.type === 'radio' && q.options) {
@@ -341,9 +344,8 @@ export function renderIntroductionPage(q, idx, render, visible, nextCallback) {
       const checkboxEl = document.getElementById(checkboxId);
       if (checkboxEl) {
         checkboxEl.addEventListener('change', () => {
-          responses[checkboxId] = checkboxEl.checked;
-          saveLocal(true);
-          if (requiresCheckbox) {
+          // Pour type info avec checkbox, ou requireCheckbox, on contrôle le bouton
+          if ((q.type === 'info' && q.hasCheckbox) || requiresCheckbox) {
             newBtn.disabled = !checkboxEl.checked;
           }
         });
@@ -576,7 +578,7 @@ export function renderNormalPage(q, idx, visible, nextCallback, prevCallback) {
   if (q.type === 'radio') {
     const questionDiv = document.querySelector(`[data-question-id="${q.id}"]`);
     if (questionDiv) {
-      const radioInputs = questionDiv.querySelectorAll(`input[type="radio"][name="${q.id}"]`);
+      const radioInputs = questionDiv.querySelectorAll('input[type="radio"][name="' + q.id + '"]');
 
       const syncSubOptionTextFields = () => {
         try {
@@ -635,6 +637,18 @@ export function renderNormalPage(q, idx, visible, nextCallback, prevCallback) {
           }
         });
 
+        // Synchroniser l'affichage des followUps inline (subtab) attachés aux options radio
+        questionDiv.querySelectorAll('.sub-options-container[data-followup-for]').forEach(el => {
+          const key = el.getAttribute('data-followup-for');
+          const shouldShow = !!(selectedValue && key === selectedValue);
+          el.style.display = shouldShow ? 'block' : 'none';
+          if (!shouldShow) {
+            el.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            const fid = el.querySelector('input[type="radio"]')?.getAttribute('name');
+            if (fid && responses[fid] !== undefined) delete responses[fid];
+          }
+        });
+
         // Après le show/hide des containers, sync l'état des textfields des subOptions
         syncSubOptionTextFields();
         saveLocal(true);
@@ -687,6 +701,17 @@ export function renderNormalPage(q, idx, visible, nextCallback, prevCallback) {
         input.addEventListener('input', handler);
         input.addEventListener('change', handler);
       });
+
+      // Sauvegarde live des followUps inline (radio) des options radio
+      questionDiv.querySelectorAll('.sub-options-container[data-followup-for] input[type="radio"]').forEach(r => {
+        r.addEventListener('change', (e) => {
+          const fid = e.target.getAttribute('name');
+          if (!fid) return;
+          responses[fid] = String(e.target.value || '');
+          saveLocal(true);
+        });
+      });
+
       syncRadioTextFields();
       syncSubOptionTextFields();
     }
@@ -1167,6 +1192,44 @@ export function renderMultiQuestionPage(questions, idx, visible, nextCallback, p
 
       syncMissingTextFields();
       syncMissingFollowUps();
+    }
+
+    // Gestion des radios avec followUp inline (subtab)
+    if (q.type === 'radio') {
+      const radioInputs = questionDiv.querySelectorAll('input[type="radio"][name="' + q.id + '"]');
+      
+      const syncRadioFollowUps = () => {
+        const checked = questionDiv.querySelector('input[type="radio"][name="' + q.id + '"]:checked');
+        const selectedValue = checked ? String(checked.value) : '';
+        
+        questionDiv.querySelectorAll('.sub-options-container[data-followup-for]').forEach(el => {
+          const key = el.getAttribute('data-followup-for');
+          const shouldShow = !!(selectedValue && key === selectedValue);
+          el.style.display = shouldShow ? 'block' : 'none';
+          if (!shouldShow) {
+            el.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            const fid = el.querySelector('input[type="radio"]')?.getAttribute('name');
+            if (fid && responses[fid] !== undefined) delete responses[fid];
+          }
+        });
+        saveLocal(true);
+      };
+      
+      radioInputs.forEach(radio => {
+        radio.addEventListener('change', syncRadioFollowUps);
+      });
+      
+      // Sauvegarde live des followUps inline (radio)
+      questionDiv.querySelectorAll('.sub-options-container[data-followup-for] input[type="radio"]').forEach(r => {
+        r.addEventListener('change', (e) => {
+          const fid = e.target.getAttribute('name');
+          if (!fid) return;
+          responses[fid] = String(e.target.value || '');
+          saveLocal(true);
+        });
+      });
+      
+      syncRadioFollowUps();
     }
   });
 
