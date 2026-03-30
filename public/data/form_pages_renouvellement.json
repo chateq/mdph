@@ -83,48 +83,11 @@
       "progressMode": "questions"
     },
     {
-      "id": "page10",
-      "title": "",
-      "description": "",
-      "questionsFile": "renouvellement/page10/questions_Module10.json",
-      "pdfMappingFile": "renouvellement/page10/pdf_fields_Module10.json",
-      "order": 10,
-      "progressMode": "questions"
-    },
-    {
-      "id": "page11",
-      "title": "",
-      "description": "",
-      "questionsFile": "renouvellement/page11/questions_Module11.json",
-      "pdfMappingFile": "renouvellement/page11/pdf_fields_Module11.json",
-      "order": 11,
-      "progressMode": "questions"
-    },
-    {
-      "id": "page11a",
-      "title": "",
-      "description": "",
-      "questionsFile": "renouvellement/page11a/questions_Module11a.json",
-      "pdfMappingFile": "renouvellement/page11a/pdf_fields_Module11a.json",
-      "order": 12,
-      "condition": "renouv_projet_vie_missing === 'pas_sais_pas'",
-      "progressMode": "questions"
-    },
-    {
-      "id": "page12",
-      "title": "",
-      "description": "",
-      "questionsFile": "renouvellement/page12/questions_Module12.json",
-      "pdfMappingFile": "renouvellement/page12/pdf_fields_Module12.json",
-      "order": 13,
-      "progressMode": "questions"
-    },
-    {
       "id": "coordonnees",
       "title": "",
       "description": "",
       "questionsFile": "final/coordonnees.json",
-      "order": 14
+      "order": 10
     }
   ]
 }

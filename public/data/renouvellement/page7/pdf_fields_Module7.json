@@ -1,5 +1,11 @@
 {
   "fields": [
-    { "name": "renouv_point_important", "type": "text", "description": "Point le plus important" }
+    { "name": "renouv_situation_pro", "type": "text", "description": "Situation professionnelle actuelle" },
+    { "name": "renouv_limitation_travail", "type": "text", "description": "Limitation capacité de travail" },
+    { "name": "renouv_arrets_travail", "type": "text", "description": "Arrêts de travail" },
+    { "name": "renouv_tentative_reprise", "type": "text", "description": "Tentative de reprise d'activité" },
+    { "name": "renouv_nombre_tentatives", "type": "text", "description": "Nombre de tentatives" },
+    { "name": "renouv_quitte_emploi_sante", "type": "text", "description": "Emploi quitté pour santé" },
+    { "name": "renouv_amenagement_poste", "type": "text", "description": "Aménagement de poste" }
   ]
 }

@@ -1,11 +1,10 @@
 {
   "fields": [
-    { "name": "renouv_limitation_deplacer", "type": "text", "description": "Limitation - déplacements" },
-    { "name": "renouv_limitation_taches", "type": "text", "description": "Limitation - tâches quotidiennes" },
-    { "name": "renouv_limitation_concentration", "type": "text", "description": "Limitation - concentration" },
-    { "name": "renouv_limitation_rythme", "type": "text", "description": "Limitation - rythme" },
-    { "name": "renouv_frequence_difficultes", "type": "text", "description": "Fréquence des difficultés" },
-    { "name": "renouv_impact_difficultes", "type": "text", "description": "Impact des difficultés" },
-    { "name": "renouv_exemple_concret", "type": "text", "description": "Exemple concret" }
+    { "name": "renouv_situation_professionnelle", "type": "text", "description": "Situation professionnelle" },
+    { "name": "renouv_travail_adapte", "type": "text", "description": "Travail adapté" },
+    { "name": "renouv_amenagements_poste", "type": "text", "description": "Aménagements de poste" },
+    { "name": "renouv_type_amenagements", "type": "text", "description": "Types d'aménagement" },
+    { "name": "renouv_type_amenagements_text", "type": "text", "description": "Précision - autre aménagement" },
+    { "name": "renouv_difficultes_persistantes", "type": "text", "description": "Difficultés persistantes" }
   ]
 }

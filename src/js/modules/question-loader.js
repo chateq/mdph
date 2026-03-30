@@ -186,10 +186,7 @@ function evaluateCondition(condition) {
 
 export function refreshVisible() {
   visible = allQuestions.filter(q => {
-    if (q.isIntroduction) {
-      return true;
-    }
-
+    // Vérifier d'abord les conditions de page et section (s'appliquent à tous)
     if (q.pageCondition) {
       if (!evaluateCondition(q.pageCondition)) {
         return false;
@@ -200,6 +197,16 @@ export function refreshVisible() {
       if (!evaluateCondition(q.sectionCondition)) {
         return false;
       }
+    }
+
+    // Les introductions sont toujours visibles SAUF si elles ont une condition_affichage
+    if (q.isIntroduction) {
+      if (q.condition_affichage) {
+        const result = evaluateCondition(q.condition_affichage);
+        console.log(`DEBUG refreshVisible: intro ${q.id} condition "${q.condition_affichage}" = ${result}`);
+        return result;
+      }
+      return true;
     }
 
     if (!q.condition_affichage) {

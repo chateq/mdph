@@ -5,46 +5,173 @@
       "description": "",
       "questions": [
         {
-          "id": "renouv_situation_pro",
-          "title": "Quelle est votre situation professionnelle actuelle ?",
-          "description": "",
-          "type": "radio",
+          "id": "renouv_explication_projet_vie",
+          "title": "Qu'est-ce que le projet de vie ?",
+          "description": "Le projet de vie est le document qui influence directement la décision de la MDPH. C'est à partir de ce texte que la commission comprend votre situation et évalue vos droits.\n\nLes certificats médicaux ne montrent pas votre quotidien : si votre projet de vie est mal rédigé, incomplet ou imprécis, votre situation peut être mal comprise, et vos droits refusés ou réduits.\n\nUn projet de vie clair, structuré et concret est indispensable pour défendre votre dossier.",
+          "type": "info",
+          "isIntroduction": true,
+          "hasCheckbox": true,
           "obligatoire": true,
-          "options": [
-            { "value": "temps_plein", "label": "temps plein" },
-            { "value": "temps_partiel", "label": "temps partiel" },
-            { "value": "arret_maladie", "label": "arrêt maladie" },
-            { "value": "invalidite", "label": "invalidité" },
-            { "value": "chomage", "label": "chômage" },
-            { "value": "sans_activite", "label": "sans activité" }
+          "condition_affichage": "renouv_projet_vie_missing === 'pas_sais_pas'"
+        },
+        {
+          "id": "renouv_derniere_decision",
+          "title": "Dernière décision MDPH",
+          "description": "",
+          "type": "file",
+          "obligatoire": false,
+          "maxFiles": 1,
+          "acceptedFileTypes": [".pdf", ".jpg", ".jpeg", ".png"],
+          "maxFileSizeMB": 5,
+          "missingOptions": [
+            { "value": "je_n_ai_pas", "label": "Je ne l'ai pas" }
           ]
         },
         {
-          "id": "renouv_limitation_travail",
-          "title": "Dans quelle mesure votre état de santé limite-t-il votre capacité à travailler ?",
+          "id": "renouv_certificat_medical",
+          "title": "Certificat médical récent",
           "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante" },
-            { "value": "4", "label": "4 — impossible à réaliser seul" }
+          "type": "file",
+          "obligatoire": false,
+          "maxFiles": 1,
+          "acceptedFileTypes": [".pdf", ".jpg", ".jpeg", ".png"],
+          "maxFileSizeMB": 5,
+          "missingOptions": [
+            { "value": "je_n_ai_pas_encore", "label": "Je ne l'ai pas encore" },
+            { "value": "je_n_en_ai_pas", "label": "Je n'en ai pas" }
           ]
         },
         {
-          "id": "renouv_arrets_travail",
-          "title": "Au cours des derniers mois, avez-vous eu des arrêts de travail ?",
+          "id": "renouv_rdv_medical_prevu",
+          "title": "Un rendez-vous médical est-il prévu ?",
+          "description": "",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "renouv_certificat_medical_missing === 'je_n_ai_pas_encore'",
+          "options": [
+            { "value": "oui", "label": "oui" },
+            { "value": "non", "label": "non" }
+          ]
+        },
+        {
+          "id": "renouv_comptes_rendus",
+          "title": "Comptes rendus de spécialistes",
+          "description": "",
+          "type": "file",
+          "obligatoire": false,
+          "maxFiles": 10,
+          "acceptedFileTypes": [".pdf", ".jpg", ".jpeg", ".png"],
+          "maxFileSizeMB": 5,
+          "missingOptions": [
+            { "value": "je_n_en_ai_pas", "label": "Je n'en ai pas" },
+            { "value": "pas_suivi_specialise", "label": "Je n'ai pas de suivi spécialisé" }
+          ]
+        },
+        {
+          "id": "renouv_examens_medicaux",
+          "title": "Examens médicaux",
+          "description": "",
+          "type": "file",
+          "obligatoire": false,
+          "maxFiles": 10,
+          "acceptedFileTypes": [".pdf", ".jpg", ".jpeg", ".png"],
+          "maxFileSizeMB": 5,
+          "missingOptions": [
+            { "value": "je_n_en_ai_pas", "label": "Je n'en ai pas" },
+            { "value": "je_ne_sais_pas", "label": "Je ne sais pas si c'est utile" }
+          ]
+        },
+        {
+          "id": "renouv_documents_travail",
+          "title": "Documents liés au travail",
+          "description": "",
+          "type": "file",
+          "obligatoire": false,
+          "maxFiles": 10,
+          "acceptedFileTypes": [".pdf", ".jpg", ".jpeg", ".png"],
+          "maxFileSizeMB": 5,
+          "missingOptions": [
+            { "value": "je_n_en_ai_pas", "label": "Je n'en ai pas" },
+            { "value": "pas_concerne", "label": "Je ne suis pas concerné" }
+          ]
+        },
+        {
+          "id": "renouv_projet_vie",
+          "title": "Projet de vie",
+          "description": "",
+          "type": "file",
+          "obligatoire": false,
+          "maxFiles": 1,
+          "acceptedFileTypes": [".pdf", ".jpg", ".jpeg", ".png"],
+          "maxFileSizeMB": 5,
+          "missingOptions": [
+            { "value": "pas_redige", "label": "Je ne l'ai pas rédigé" },
+            { "value": "pas_sais_pas", "label": "Je ne sais pas ce que c'est" }
+          ]
+        },
+        {
+          "id": "renouv_documents_coherence",
+          "title": "Les documents envoyés décrivent-ils correctement votre situation actuelle ?",
           "description": "",
           "type": "radio",
           "obligatoire": true,
           "options": [
-            { "value": "aucun", "label": "aucun" },
-            { "value": "occasionnels", "label": "occasionnels" },
-            { "value": "frequents", "label": "fréquents" },
-            { "value": "tres_frequents", "label": "très fréquents" }
+            { "value": "oui", "label": "oui" },
+            { "value": "partiellement", "label": "partiellement" },
+            { "value": "non", "label": "non" }
           ]
+        },
+        {
+          "id": "renouv_documents_explication",
+          "title": "Expliquez ce qui manque ou ce qui n'est plus à jour.",
+          "description": "",
+          "type": "text",
+          "obligatoire": true,
+          "condition_affichage": "renouv_documents_coherence === 'partiellement' || renouv_documents_coherence === 'non'",
+          "placeholder": "Précisez ce qui devrait être ajouté ou modifié"
+        },
+        {
+          "id": "renouv_certificat_clarte",
+          "title": "Votre certificat médical décrit-il clairement vos limitations fonctionnelles ?",
+          "description": "",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "oui", "label": "oui" },
+            { "value": "partiellement", "label": "partiellement" },
+            { "value": "non", "label": "non" }
+          ]
+        },
+        {
+          "id": "renouv_comptes_rendus_recents",
+          "title": "Disposez-vous de comptes rendus récents de spécialistes ?",
+          "description": "",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "oui", "label": "oui" },
+            { "value": "non", "label": "non" }
+          ]
+        },
+        {
+          "id": "renouv_cohérence_documents",
+          "title": "Les documents médicaux et votre projet de vie décrivent-ils la même situation ?",
+          "description": "",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "oui", "label": "oui" },
+            { "value": "partiellement", "label": "partiellement" },
+            { "value": "non", "label": "non" }
+          ]
+        },
+        {
+          "id": "renouv_consequence_immediate",
+          "title": "Si vos droits n'étaient pas renouvelés, quelle conséquence aurait l'impact le plus immédiat dans votre vie ?",
+          "description": "",
+          "type": "text",
+          "obligatoire": true,
+          "placeholder": "Décrivez la conséquence la plus importante pour vous"
         }
       ]
     }

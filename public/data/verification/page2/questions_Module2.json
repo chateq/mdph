@@ -24,7 +24,7 @@
           "type": "checkbox_multiple",
           "obligatoire": true,
           "options": [
-            { "value": "aah", "label": "AAH", "subOptions": [
+            { "value": "aah", "label": "AAH", "subOptionsTitle": "Votre dossier explique-t-il clairement pourquoi votre état de santé limite votre accès à l’emploi ?", "subOptions": [
               { "value": "oui", "label": "Oui" },
               { "value": "partiellement", "label": "Partiellement" },
               { "value": "non", "label": "Non" }

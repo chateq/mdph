@@ -1,7 +1,7 @@
 // Imports des modules
 import { $, setStatus } from './modules/dom-utils.js';
 import { loadSaved, resetAll, responses, saveLocal } from './modules/storage.js';
-import { visible, refreshVisible, loadAllQuestions } from './modules/question-loader.js';
+import { visible, refreshVisible, loadAllQuestions, allQuestions } from './modules/question-loader.js';
 import { updateProgress } from './modules/progress.js';
 import { updateFormHeader } from './modules/form-header.js';
 import { renderIntroductionPage, renderCelebrationPage, renderRecapPage, renderNormalPage, renderMultiQuestionPage } from './modules/page-renderer.js';
@@ -15,6 +15,9 @@ let idx = 0;
 // Fonction principale de rendu
 function render() {
   refreshVisible();
+  console.log('DEBUG: visible.length =', visible.length);
+  console.log('DEBUG: visible[0] =', visible[0]);
+  console.log('DEBUG: idx =', idx);
   const q = visible[idx];
   
   // Mettre à jour le titre et la description
@@ -108,9 +111,12 @@ async function boot() {
   }
 
   loadSaved();
+  console.log('DEBUG: responses =', responses);
 
   try {
     await loadAllQuestions();
+    console.log('DEBUG: allQuestions.length =', allQuestions?.length);
+    console.log('DEBUG: first 5 allQuestions =', allQuestions?.slice(0, 5));
   } catch (error) {
     console.error('Erreur lors du chargement des questions :', error);
     setStatus('Erreur de chargement des questions');
@@ -124,6 +130,7 @@ async function boot() {
   // Réinitialiser l'index à 0 pour commencer par la première question (l'introduction)
   idx = 0;
   refreshVisible();
+  console.log('DEBUG: after refreshVisible, visible.length =', visible.length);
   render();
 }
 

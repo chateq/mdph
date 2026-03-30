@@ -5,33 +5,96 @@
       "description": "",
       "questions": [
         {
-          "id": "renouv_evolution_etat",
-          "title": "Depuis la dernière décision MDPH, votre état de santé est :",
+          "id": "renouv_variabilite_symptomes",
+          "title": "Vos symptômes sont :",
           "description": "",
           "type": "radio",
           "obligatoire": true,
           "options": [
-            { "value": "stable", "label": "stable" },
-            { "value": "aggrave", "label": "aggravé", "subOptionsTitle": "Qu'est-ce qui s'est aggravé depuis la dernière décision ?", "subOptions": [
-              { "value": "details", "type": "text", "label": "", "fieldId": "renouv_aggravation_details", "placeholder": "Exemple : Mes douleurs chroniques se sont intensifiées, je ne peux plus marcher plus de 10 minutes sans m'arrêter, et ma fatigue est devenue permanente même après une nuit de sommeil." }
-            ] },
-            { "value": "ameliore", "label": "amélioré", "subOptionsTitle": "Dans quels domaines votre état s'est-il amélioré ?", "subOptions": [
-              { "value": "mobilite", "label": "mobilité" },
-              { "value": "fatigue", "label": "fatigue" },
-              { "value": "douleurs", "label": "douleurs" },
-              { "value": "concentration", "label": "concentration" },
-              { "value": "capacite_travail", "label": "capacité de travail" },
-              { "value": "autre", "label": "autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
-            ] }
+            { "value": "constants", "label": "constants" },
+            { "value": "variables", "label": "variables" },
+            { "value": "imprevisibles", "label": "imprévisibles" }
           ]
         },
         {
-          "id": "renouv_description_evolution",
-          "title": "Décrivez brièvement l'évolution de votre état.",
+          "id": "renouv_jours_difficiles",
+          "title": "Combien de jours difficiles rencontrez-vous par semaine ?",
           "description": "",
-          "type": "text",
+          "type": "radio",
           "obligatoire": true,
-          "placeholder": "Exemple : Les douleurs ont augmenté depuis 6 mois"
+          "options": [
+            { "value": "1_2", "label": "1 à 2 jours" },
+            { "value": "3_4", "label": "3 à 4 jours" },
+            { "value": "5_plus", "label": "5 jours ou plus" }
+          ]
+        },
+        {
+          "id": "renouv_limitation_deplacer",
+          "title": "Lors de ces journées difficiles, dans quelle mesure êtes-vous limité pour vous déplacer ? (0=aucune difficulté, 4=impossible)",
+          "description": "",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "0", "label": "0 — aucune difficulté" },
+            { "value": "1", "label": "1 — difficulté légère" },
+            { "value": "2", "label": "2 — difficulté modérée" },
+            { "value": "3", "label": "3 — difficulté importante" },
+            { "value": "4", "label": "4 — impossible" }
+          ]
+        },
+        {
+          "id": "renouv_limitation_taches",
+          "title": "Lors de ces journées difficiles, dans quelle mesure êtes-vous limité pour effectuer les tâches quotidiennes ?",
+          "description": "",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "0", "label": "0 — aucune difficulté" },
+            { "value": "1", "label": "1 — difficulté légère" },
+            { "value": "2", "label": "2 — difficulté modérée" },
+            { "value": "3", "label": "3 — difficulté importante" },
+            { "value": "4", "label": "4 — impossible" }
+          ]
+        },
+        {
+          "id": "renouv_limitation_travail",
+          "title": "Lors de ces journées difficiles, dans quelle mesure êtes-vous limité pour travailler ?",
+          "description": "",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "0", "label": "0 — aucune difficulté" },
+            { "value": "1", "label": "1 — difficulté légère" },
+            { "value": "2", "label": "2 — difficulté modérée" },
+            { "value": "3", "label": "3 — difficulté importante" },
+            { "value": "4", "label": "4 — impossible" }
+          ]
+        },
+        {
+          "id": "renouv_limitation_concentration",
+          "title": "Lors de ces journées difficiles, dans quelle mesure êtes-vous limité pour vous concentrer ?",
+          "description": "",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "0", "label": "0 — aucune difficulté" },
+            { "value": "1", "label": "1 — difficulté légère" },
+            { "value": "2", "label": "2 — difficulté modérée" },
+            { "value": "3", "label": "3 — difficulté importante" },
+            { "value": "4", "label": "4 — impossible" }
+          ]
+        },
+        {
+          "id": "renouv_temps_recuperation",
+          "title": "Après un effort physique ou mental, combien de temps vous faut-il pour récupérer ?",
+          "description": "",
+          "type": "radio",
+          "obligatoire": true,
+          "options": [
+            { "value": "quelques_heures", "label": "quelques heures" },
+            { "value": "une_journee", "label": "une journée" },
+            { "value": "plusieurs_jours", "label": "plusieurs jours" }
+          ]
         }
       ]
     }

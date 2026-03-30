@@ -1,9 +1,16 @@
 {
   "fields": [
-    { "name": "renouv_type_dossier", "type": "text", "description": "Type de dossier" },
-    { "name": "renouv_aides_demandees", "type": "text", "description": "Aides demandées" },
-    { "name": "autre_text", "type": "text", "description": "Précision - autre aide" },
-    { "name": "renouv_aah_acces_emploi", "type": "text", "description": "Argumentation AAH - accès à l'emploi" },
-    { "name": "renouv_argument_principal", "type": "text", "description": "Argument principal" }
+    { "name": "renouv_nombre_decisions", "type": "text", "description": "Nombre de décisions MDPH reçues" },
+    { "name": "renouv_evolution_taux", "type": "text", "description": "Évolution du taux d'incapacité" },
+    { "name": "renouv_duree_attribution", "type": "text", "description": "Durée d'attribution des droits" },
+    { "name": "renouv_motifs_decisions", "type": "text", "description": "Motifs évoqués dans les décisions précédentes" },
+    { "name": "renouv_evolution_etat", "type": "text", "description": "Évolution de l'état de santé" },
+    { "name": "renouv_aggravation_details", "type": "text", "description": "Détails de l'aggravation" },
+    { "name": "renouv_amelioration_domaines", "type": "text", "description": "Domaines d'amélioration" },
+    { "name": "renouv_description_evolution", "type": "text", "description": "Description de l'évolution" },
+    { "name": "renouv_rdv_medicaux", "type": "text", "description": "Rendez-vous médicaux par mois" },
+    { "name": "renouv_temps_soins", "type": "text", "description": "Temps consacré aux soins par semaine" },
+    { "name": "renouv_effets_secondaires", "type": "text", "description": "Effets secondaires des traitements" },
+    { "name": "renouv_quels_effets", "type": "text", "description": "Types d'effets secondaires" }
   ]
 }

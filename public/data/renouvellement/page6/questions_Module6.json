@@ -5,51 +5,57 @@
       "description": "",
       "questions": [
         {
-          "id": "renouv_rdv_medicaux",
-          "title": "Combien de rendez-vous médicaux avez-vous en moyenne par mois ?",
+          "id": "renouv_aide_quotidien",
+          "title": "Recevez-vous de l'aide dans votre quotidien ?",
           "description": "",
           "type": "radio",
           "obligatoire": true,
           "options": [
-            { "value": "1", "label": "1" },
-            { "value": "2_3", "label": "2 à 3" },
-            { "value": "4_plus", "label": "4 ou plus" }
-          ]
-        },
-        {
-          "id": "renouv_temps_soins",
-          "title": "Combien d'heures consacrez-vous aux soins ou aux traitements chaque semaine ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "moins_2h", "label": "moins de 2 heures" },
-            { "value": "2_5h", "label": "2 à 5 heures" },
-            { "value": "plus_5h", "label": "plus de 5 heures" }
-          ]
-        },
-        {
-          "id": "renouv_effets_secondaires",
-          "title": "Vos traitements provoquent-ils des effets secondaires ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "oui", "label": "oui" },
+            { "value": "oui_regulierement", "label": "oui régulièrement" },
+            { "value": "parfois", "label": "parfois" },
             { "value": "non", "label": "non" }
           ]
         },
         {
-          "id": "renouv_quels_effets",
-          "title": "Quels effets secondaires ressentez-vous ?",
+          "id": "renouv_qui_aide",
+          "title": "Qui vous aide ?",
+          "description": "",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "renouv_aide_quotidien !== 'non'",
+          "options": [
+            { "value": "conjoint", "label": "conjoint" },
+            { "value": "famille", "label": "famille" },
+            { "value": "amis", "label": "amis" },
+            { "value": "aide_professionnelle", "label": "aide professionnelle" }
+          ]
+        },
+        {
+          "id": "renouv_temps_aide",
+          "title": "Temps d'aide par semaine :",
+          "description": "",
+          "type": "radio",
+          "obligatoire": true,
+          "condition_affichage": "renouv_aide_quotidien !== 'non'",
+          "options": [
+            { "value": "moins_1h", "label": "moins d'1h" },
+            { "value": "1_3h", "label": "1–3h" },
+            { "value": "3_6h", "label": "3–6h" },
+            { "value": "plus_6h", "label": "plus de 6h" }
+          ]
+        },
+        {
+          "id": "renouv_activites_aide",
+          "title": "Pour quelles activités avez-vous besoin d'aide ?",
           "description": "",
           "type": "checkbox_multiple",
           "obligatoire": true,
-          "condition_affichage": "renouv_effets_secondaires === 'oui'",
+          "condition_affichage": "renouv_aide_quotidien !== 'non'",
           "options": [
-            { "value": "fatigue", "label": "fatigue" },
-            { "value": "douleurs", "label": "douleurs" },
-            { "value": "troubles_concentration", "label": "troubles de concentration" },
+            { "value": "courses", "label": "courses" },
+            { "value": "menage", "label": "ménage" },
+            { "value": "deplacements", "label": "déplacements" },
+            { "value": "demarches_administratives", "label": "démarches administratives" },
             { "value": "autre", "label": "autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
           ]
         }

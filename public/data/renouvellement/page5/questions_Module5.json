@@ -2,124 +2,26 @@
   "sections": [
     {
       "title": "",
-      "description": "Répondez en pensant à votre situation dans une journée normale.",
+      "description": "",
       "questions": [
         {
-          "id": "renouv_marcher_200m",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour marcher environ 200 mètres ?",
+          "id": "renouv_situation_pro",
+          "title": "Quelle est votre situation professionnelle actuelle ?",
           "description": "",
           "type": "radio",
           "obligatoire": true,
           "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante", "subOptionsTitle": "À quelle fréquence cette difficulté se produit-elle ?", "subOptions": [
-              { "value": "tous_les_jours", "label": "tous les jours" },
-              { "value": "plusieurs_fois_semaine", "label": "plusieurs fois par semaine" },
-              { "value": "occasionnellement", "label": "occasionnellement" },
-              { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-            ]},
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "Précisez les aides dont vous avez besoin (personne ou matériel) et à quelle fréquence.", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
+            { "value": "temps_plein", "label": "temps plein" },
+            { "value": "temps_partiel", "label": "temps partiel" },
+            { "value": "arret_maladie", "label": "arrêt maladie" },
+            { "value": "invalidite", "label": "invalidité" },
+            { "value": "chomage", "label": "chômage" },
+            { "value": "sans_activite", "label": "sans activité" }
           ]
         },
         {
-          "id": "renouv_debout_10min",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour rester debout plus de 10 minutes ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante", "subOptionsTitle": "À quelle fréquence cette difficulté se produit-elle ?", "subOptions": [
-              { "value": "tous_les_jours", "label": "tous les jours" },
-              { "value": "plusieurs_fois_semaine", "label": "plusieurs fois par semaine" },
-              { "value": "occasionnellement", "label": "occasionnellement" },
-              { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-            ]},
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "Décrivez le temps supporté, les difficultés et si vous avez besoin d’aide ou de matériel.", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_escalier",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour monter ou descendre un escalier ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante", "subOptionsTitle": "À quelle fréquence cette difficulté se produit-elle ?", "subOptions": [
-              { "value": "tous_les_jours", "label": "tous les jours" },
-              { "value": "plusieurs_fois_semaine", "label": "plusieurs fois par semaine" },
-              { "value": "occasionnellement", "label": "occasionnellement" },
-              { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-            ]},
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "Décrivez les difficultés, l’aide ou le matériel nécessaire.", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_deplacer_exterieur",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour vous déplacer seul à l'extérieur ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante", "subOptionsTitle": "À quelle fréquence cette difficulté se produit-elle ?", "subOptions": [
-              { "value": "tous_les_jours", "label": "tous les jours" },
-              { "value": "plusieurs_fois_semaine", "label": "plusieurs fois par semaine" },
-              { "value": "occasionnellement", "label": "occasionnellement" },
-              { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-            ]},
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "Décrivez les difficultés, l’aide ou le matériel utilisé.", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_transports",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour utiliser les transports ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante", "subOptionsTitle": "À quelle fréquence cette difficulté se produit-elle ?", "subOptions": [
-              { "value": "tous_les_jours", "label": "tous les jours" },
-              { "value": "plusieurs_fois_semaine", "label": "plusieurs fois par semaine" },
-              { "value": "occasionnellement", "label": "occasionnellement" },
-              { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-            ]},
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "Dans quelle mesure votre état de santé vous limite-t-il pour utiliser les transports (monter, descendre, attendre, vous orienter) ?", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_frequence_mobilite",
-          "title": "À quelle fréquence cette difficulté se produit-elle ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "condition_affichage": "renouv_marcher_200m === '3' || renouv_marcher_200m === '4' || renouv_debout_10min === '3' || renouv_debout_10min === '4' || renouv_escalier === '3' || renouv_escalier === '4' || renouv_deplacer_exterieur === '3' || renouv_deplacer_exterieur === '4' || renouv_transports === '3' || renouv_transports === '4'",
-          "options": [
-            { "value": "tous_les_jours", "label": "tous les jours" },
-            { "value": "plusieurs_fois_semaine", "label": "plusieurs fois par semaine" },
-            { "value": "occasionnellement", "label": "occasionnellement" }
-          ]
-        },
-        {
-          "id": "renouv_laver_douche",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour vous laver ou prendre une douche ?",
+          "id": "renouv_limitation_travail",
+          "title": "Dans quelle mesure votre état de santé limite-t-il votre capacité à travailler ?",
           "description": "",
           "type": "radio",
           "obligatoire": true,
@@ -128,293 +30,67 @@
             { "value": "1", "label": "1 — difficulté légère" },
             { "value": "2", "label": "2 — difficulté modérée" },
             { "value": "3", "label": "3 — difficulté importante" },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
+            { "value": "4", "label": "4 — impossible à réaliser seul" }
           ]
         },
         {
-          "id": "renouv_habiller_seul",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour vous habiller seul ?",
+          "id": "renouv_arrets_travail",
+          "title": "Au cours des derniers mois, avez-vous eu des arrêts de travail ?",
           "description": "",
           "type": "radio",
           "obligatoire": true,
           "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante" },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
+            { "value": "aucun", "label": "aucun" },
+            { "value": "occasionnels", "label": "occasionnels" },
+            { "value": "frequents", "label": "fréquents" },
+            { "value": "tres_frequents", "label": "très fréquents" }
           ]
         },
         {
-          "id": "renouv_preparer_repas",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour préparer un repas simple ?",
+          "id": "renouv_tentative_reprise",
+          "title": "Depuis la dernière décision MDPH, avez-vous tenté de reprendre une activité ?",
           "description": "",
           "type": "radio",
           "obligatoire": true,
           "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante" },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_faire_courses",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour faire vos courses ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante" },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_entretenir_logement",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour entretenir votre logement ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante" },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_aide_autonomie",
-          "title": "Recevez-vous de l'aide pour réaliser ces activités ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "condition_affichage": "renouv_laver_douche === '3' || renouv_laver_douche === '4' || renouv_habiller_seul === '3' || renouv_habiller_seul === '4' || renouv_preparer_repas === '3' || renouv_preparer_repas === '4' || renouv_faire_courses === '3' || renouv_faire_courses === '4' || renouv_entretenir_logement === '3' || renouv_entretenir_logement === '4'",
-          "options": [
-            { "value": "oui", "label": "oui", "subOptionsTitle": "Qui vous apporte cette aide ?", "subOptions": [
-              { "value": "conjoint_partenaire", "label": "conjoint ou partenaire" },
-              { "value": "membre_famille", "label": "membre de la famille" },
-              { "value": "aide_professionnelle", "label": "aide professionnelle" },
-              { "value": "autre", "label": "autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
-            ] },
+            { "value": "oui", "label": "oui" },
             { "value": "non", "label": "non" }
           ]
         },
         {
-          "id": "renouv_fatigue_journee",
-          "title": "Dans quelle mesure votre état de santé provoque-t-il une fatigue importante dans la journée ?",
+          "id": "renouv_nombre_tentatives",
+          "title": "Si oui, combien de tentatives ?",
           "description": "",
           "type": "radio",
           "obligatoire": true,
+          "condition_affichage": "renouv_tentative_reprise === 'oui'",
           "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante", "subOptionsTitle": "Après un effort, combien de temps vous faut-il pour récupérer ?", "subOptions": [
-              { "value": "quelques_heures", "label": "quelques heures" },
-              { "value": "une_journee", "label": "une journée" },
-              { "value": "plusieurs_jours", "label": "plusieurs jours" },
-              { "value": "tous_les_jours", "label": "tous les jours" },
-              { "value": "situations_complexes", "label": "lors de situations complexes" },
-              { "value": "periodes_fatigue", "label": "lors de périodes de fatigue importante" }
-            ] },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
+            { "value": "1", "label": "1" },
+            { "value": "2", "label": "2" },
+            { "value": "3_plus", "label": "3 ou plus" }
           ]
         },
         {
-          "id": "renouv_douleurs_limitantes",
-          "title": "Dans quelle mesure votre état de santé provoque-t-il des douleurs limitant vos activités ?",
+          "id": "renouv_quitte_emploi_sante",
+          "title": "Avez-vous quitté un emploi à cause de votre état de santé ?",
           "description": "",
           "type": "radio",
           "obligatoire": true,
           "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante", "subOptionsTitle": "Après un effort, combien de temps vous faut-il pour récupérer ?", "subOptions": [
-              { "value": "quelques_heures", "label": "quelques heures" },
-              { "value": "une_journee", "label": "une journée" },
-              { "value": "plusieurs_jours", "label": "plusieurs jours" }
-            ] },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_besoin_repos",
-          "title": "Dans quelle mesure votre état de santé provoque-t-il un besoin de repos fréquent ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante" },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_activite_prolongee",
-          "title": "Dans quelle mesure votre état de santé provoque-t-il une difficulté à maintenir une activité prolongée ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante" },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_effets_secondaires_traitements",
-          "title": "Vos traitements provoquent-ils des effets secondaires ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "oui", "label": "oui", "subOptionsTitle": "Quels effets secondaires ressentez-vous ?", "subOptions": [
-              { "value": "fatigue", "label": "fatigue" },
-              { "value": "douleurs", "label": "douleurs" },
-              { "value": "troubles_concentration", "label": "troubles de concentration" },
-              { "value": "autre", "label": "autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
-            ] },
+            { "value": "oui", "label": "oui" },
             { "value": "non", "label": "non" }
           ]
         },
-                {
-          "id": "renouv_concentrer_tache",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour vous concentrer sur une tâche ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante", "subOptionsTitle": "Après un effort, combien de temps vous faut-il pour récupérer ?", "subOptions": [
-              { "value": "tous_les_jours", "label": "tous les jours" },
-              { "value": "situations_complexes", "label": "lors de situations complexes" },
-              { "value": "periodes_fatigue", "label": "lors de périodes de fatigue importante" }
-            ] },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
         {
-          "id": "renouv_memoriser_informations",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour mémoriser des informations ?",
+          "id": "renouv_amenagement_poste",
+          "title": "Avez-vous demandé des aménagements de poste ?",
           "description": "",
           "type": "radio",
           "obligatoire": true,
           "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante", "subOptionsTitle": "Ces difficultés apparaissent principalement :", "subOptions": [
-              { "value": "tous_les_jours", "label": "tous les jours" },
-              { "value": "situations_complexes", "label": "lors de situations complexes" },
-              { "value": "periodes_fatigue", "label": "lors de périodes de fatigue importante" }
-            ] },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_organiser_taches",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour organiser vos tâches quotidiennes ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante", "subOptionsTitle": "Ces difficultés apparaissent principalement :", "subOptions": [
-              { "value": "tous_les_jours", "label": "tous les jours" },
-              { "value": "situations_complexes", "label": "lors de situations complexes" },
-              { "value": "periodes_fatigue", "label": "lors de périodes de fatigue importante" }
-            ] },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_gerer_administratif",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour gérer des démarches administratives ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante", "subOptionsTitle": "Ces difficultés apparaissent principalement :", "subOptions": [
-              { "value": "tous_les_jours", "label": "tous les jours" },
-              { "value": "situations_complexes", "label": "lors de situations complexes" },
-              { "value": "periodes_fatigue", "label": "lors de périodes de fatigue importante" }
-            ] },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_interaction_inconnus",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour interagir avec des personnes que vous ne connaissez pas ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante" },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_collaborer_personnes",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour travailler ou collaborer avec d'autres personnes ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante" },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
-          ]
-        },
-        {
-          "id": "renouv_stress_social",
-          "title": "Dans quelle mesure votre état de santé vous limite-t-il pour gérer des situations de stress ou de pression sociale ?",
-          "description": "",
-          "type": "radio",
-          "obligatoire": true,
-          "options": [
-            { "value": "0", "label": "0 — aucune difficulté" },
-            { "value": "1", "label": "1 — difficulté légère" },
-            { "value": "2", "label": "2 — difficulté modérée" },
-            { "value": "3", "label": "3 — difficulté importante" },
-            { "value": "4", "label": "4 — impossible à réaliser seul" },
-            { "value": "precisez", "label": "précisez", "hasTextField": true, "textFieldPlaceholder": "Décrivez la situation" }
+            { "value": "oui_acceptes", "label": "oui acceptés" },
+            { "value": "oui_refuses", "label": "oui refusés" },
+            { "value": "non", "label": "non" }
           ]
         }
       ]

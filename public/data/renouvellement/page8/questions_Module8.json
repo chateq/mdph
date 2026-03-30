@@ -5,50 +5,58 @@
       "description": "",
       "questions": [
         {
-          "id": "renouv_tentative_reprise",
-          "title": "Depuis la dernière décision MDPH, avez-vous tenté de reprendre une activité ?",
+          "id": "renouv_aide_quotidien",
+          "title": "Recevez-vous de l'aide dans votre quotidien ?",
           "description": "",
           "type": "radio",
           "obligatoire": true,
           "options": [
-            { "value": "oui", "label": "oui" },
+            { "value": "oui_regulierement", "label": "oui régulièrement" },
+            { "value": "parfois", "label": "parfois" },
             { "value": "non", "label": "non" }
           ]
         },
         {
-          "id": "renouv_nombre_tentatives",
-          "title": "Si oui, combien de tentatives ?",
+          "id": "renouv_qui_aide",
+          "title": "Qui vous aide ?",
           "description": "",
           "type": "radio",
           "obligatoire": true,
-          "condition_affichage": "renouv_tentative_reprise === 'oui'",
+          "condition_affichage": "renouv_aide_quotidien !== 'non'",
           "options": [
-            { "value": "1", "label": "1" },
-            { "value": "2", "label": "2" },
-            { "value": "3_plus", "label": "3 ou plus" }
+            { "value": "conjoint", "label": "conjoint" },
+            { "value": "famille", "label": "famille" },
+            { "value": "amis", "label": "amis" },
+            { "value": "aide_professionnelle", "label": "aide professionnelle" }
           ]
         },
         {
-          "id": "renouv_quitte_emploi_sante",
-          "title": "Avez-vous quitté un emploi à cause de votre état de santé ?",
+          "id": "renouv_temps_aide",
+          "title": "Temps d'aide par semaine :",
           "description": "",
           "type": "radio",
           "obligatoire": true,
+          "condition_affichage": "renouv_aide_quotidien !== 'non'",
           "options": [
-            { "value": "oui", "label": "oui" },
-            { "value": "non", "label": "non" }
+            { "value": "moins_1h", "label": "moins d'1h" },
+            { "value": "1_3h", "label": "1–3h" },
+            { "value": "3_6h", "label": "3–6h" },
+            { "value": "plus_6h", "label": "plus de 6h" }
           ]
         },
         {
-          "id": "renouv_amenagement_poste",
-          "title": "Avez-vous demandé des aménagements de poste ?",
+          "id": "renouv_activites_aide",
+          "title": "Pour quelles activités avez-vous besoin d'aide ?",
           "description": "",
-          "type": "radio",
+          "type": "checkbox_multiple",
           "obligatoire": true,
+          "condition_affichage": "renouv_aide_quotidien !== 'non'",
           "options": [
-            { "value": "oui_acceptes", "label": "oui acceptés" },
-            { "value": "oui_refuses", "label": "oui refusés" },
-            { "value": "non", "label": "non" }
+            { "value": "courses", "label": "courses" },
+            { "value": "menage", "label": "ménage" },
+            { "value": "deplacements", "label": "déplacements" },
+            { "value": "demarches_administratives", "label": "démarches administratives" },
+            { "value": "autre", "label": "autre", "hasTextField": true, "textFieldPlaceholder": "Précisez" }
           ]
         }
       ]

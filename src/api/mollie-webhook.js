@@ -51,7 +51,6 @@ export default async function handler(req, res) {
   try {
     const raw = await readRawBody(req);
 
-    // Mollie envoie généralement: id=tr_xxx en x-www-form-urlencoded
     const params = new URLSearchParams(String(raw || ''));
     const paymentId = params.get('id') || '';
 

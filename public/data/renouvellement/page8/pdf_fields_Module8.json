@@ -1,0 +1,8 @@
+{
+  "fields": [
+    { "name": "renouv_aide_quotidien", "type": "text", "description": "Aide quotidienne reçue" },
+    { "name": "renouv_qui_aide", "type": "text", "description": "Personnes qui aident" },
+    { "name": "renouv_temps_aide", "type": "text", "description": "Temps d'aide par semaine" },
+    { "name": "renouv_activites_aide", "type": "text", "description": "Activités nécessitant de l'aide" }
+  ]
+}

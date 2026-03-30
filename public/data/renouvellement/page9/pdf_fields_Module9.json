@@ -1,0 +1,18 @@
+{
+  "fields": [
+    { "name": "renouv_explication_projet_vie", "type": "text", "description": "Explication projet de vie" },
+    { "name": "renouv_derniere_decision", "type": "text", "description": "Dernière décision MDPH" },
+    { "name": "renouv_certificat_medical", "type": "text", "description": "Certificat médical récent" },
+    { "name": "renouv_rdv_medical_prevu", "type": "text", "description": "Rendez-vous médical prévu" },
+    { "name": "renouv_comptes_rendus", "type": "text", "description": "Comptes rendus de spécialistes" },
+    { "name": "renouv_examens_medicaux", "type": "text", "description": "Examens médicaux" },
+    { "name": "renouv_documents_travail", "type": "text", "description": "Documents liés au travail" },
+    { "name": "renouv_projet_vie", "type": "text", "description": "Projet de vie" },
+    { "name": "renouv_documents_coherence", "type": "text", "description": "Cohérence des documents" },
+    { "name": "renouv_documents_explication", "type": "text", "description": "Explication documents manquants" },
+    { "name": "renouv_certificat_clarte", "type": "text", "description": "Clarté du certificat médical" },
+    { "name": "renouv_comptes_rendus_recents", "type": "text", "description": "Comptes rendus récents" },
+    { "name": "renouv_cohérence_documents", "type": "text", "description": "Cohérence documents médicaux/projet de vie" },
+    { "name": "renouv_consequence_immediate", "type": "text", "description": "Conséquence immédiate" }
+  ]
+}

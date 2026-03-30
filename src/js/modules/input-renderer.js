@@ -425,24 +425,81 @@ export function renderInput(q, value) {
             // Follow-up inline (subtab) sur l'option radio - même style que subOptions checkbox
             if (opt.followUp && opt.followUp.id) {
               const followUpId = opt.followUp.id;
-              const savedFollowUp = String(responses[followUpId] ?? '');
-              const hasFollowUpOptions = opt.followUp.type === 'radio' && Array.isArray(opt.followUp.options);
+              const followUpType = String(opt.followUp.type || '');
               const followUpTitle = opt.followUp.title ? `<div class="sub-options-title">${opt.followUp.title}</div>` : '';
-              
-              radioHtml += `
-                <div class="sub-options-container" data-followup-for="${optValue}" style="${isChecked ? '' : 'display:none'}">
-                  ${followUpTitle}
-                  ${opt.followUp.description ? `<div class="field-description">${opt.followUp.description}</div>` : ''}
-                  ${hasFollowUpOptions ? `
-                  <div class="sub-options-grid">
-                    ${opt.followUp.options.map(o => `
-                      <label class="sub-choice">
-                        <input type="radio" name="${followUpId}" value="${o.value}" ${savedFollowUp === String(o.value) ? 'checked' : ''} />
-                        <span>${o.label}</span>
-                      </label>
-                    `).join('')}
-                  </div>` : ''}
-                </div>`;
+              const followUpDescription = opt.followUp.description ? `<div class="field-description">${opt.followUp.description}</div>` : '';
+
+              if (followUpType === 'radio' && Array.isArray(opt.followUp.options)) {
+                const savedFollowUp = String(responses[followUpId] ?? '');
+                radioHtml += `
+                  <div class="sub-options-container" data-followup-for="${optValue}" data-followup-id="${followUpId}" style="${isChecked ? '' : 'display:none'}">
+                    ${followUpTitle}
+                    ${followUpDescription}
+                    <div class="sub-options-grid">
+                      ${opt.followUp.options.map(o => `
+                        <label class="sub-choice">
+                          <input type="radio" name="${followUpId}" value="${o.value}" ${savedFollowUp === String(o.value) ? 'checked' : ''} />
+                          <span>${o.label}</span>
+                        </label>
+                      `).join('')}
+                    </div>
+                  </div>`;
+              }
+
+              if (followUpType === 'checkbox_multiple' && Array.isArray(opt.followUp.options)) {
+                const selected = Array.isArray(responses[followUpId]) ? responses[followUpId] : [];
+                radioHtml += `
+                  <div class="sub-options-container" data-followup-for="${optValue}" data-followup-id="${followUpId}" style="${isChecked ? '' : 'display:none'}">
+                    ${followUpTitle}
+                    ${followUpDescription}
+                    <div class="sub-options-grid">
+                      ${opt.followUp.options.map(fo => {
+                        const foValue = fo.value || fo;
+                        const foLabel = fo.label || fo;
+                        const foChecked = selected.includes(foValue) ? 'checked' : '';
+                        const hasTextField = !!(fo && fo.hasTextField);
+                        let textFieldId = '';
+                        if (hasTextField) {
+                          if (fo && fo.pdfField) textFieldId = `${fo.pdfField}_text`;
+                          else if (String(foValue) === 'autre') textFieldId = `${followUpId}_text`;
+                          else textFieldId = `${followUpId}__${foValue}_text`;
+                        }
+                        const textFieldValue = textFieldId ? String(responses[textFieldId] || '') : '';
+                        return `
+                          <div>
+                            <label class="sub-choice">
+                              <input type="checkbox" value="${foValue}" ${foChecked}
+                                     data-followup-checkbox="true"
+                                     data-followup-id="${followUpId}"
+                                     data-has-text="${hasTextField ? 'true' : 'false'}"
+                                     ${hasTextField ? `data-followup-text-field-id="${textFieldId}"` : ''} />
+                              <span>${foLabel}</span>
+                            </label>
+                            ${hasTextField ? `
+                              <div class="text-field-checkbox" data-followup-text-for="${foValue}" style="${foChecked ? '' : 'display:none'}">
+                                <input type="text" placeholder="${(fo && fo.textFieldPlaceholder) ? fo.textFieldPlaceholder : 'Précisez...'}" value="${textFieldValue}" data-followup-text-field-id="${textFieldId}" class="text-input" />
+                              </div>
+                            ` : ''}
+                          </div>
+                        `;
+                      }).join('')}
+                    </div>
+                  </div>`;
+              }
+
+              if ((followUpType === 'text' || followUpType === 'textarea')) {
+                const savedText = String(responses[followUpId] ?? '');
+                const placeholder = opt.followUp.placeholder ? String(opt.followUp.placeholder) : 'Votre réponse...';
+                radioHtml += `
+                  <div class="sub-options-container" data-followup-for="${optValue}" data-followup-id="${followUpId}" style="${isChecked ? '' : 'display:none'}">
+                    ${followUpTitle}
+                    ${followUpDescription}
+                    ${followUpType === 'textarea'
+                      ? `<textarea class="input" rows="4" placeholder="${placeholder}" data-followup-textquestion-id="${followUpId}">${savedText}</textarea>`
+                      : `<input class="input" type="text" placeholder="${placeholder}" value="${savedText}" data-followup-textquestion-id="${followUpId}" />`
+                    }
+                  </div>`;
+              }
             }
             
             radioHtml += `</div>`;
